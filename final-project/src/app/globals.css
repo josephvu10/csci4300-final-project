@@ -10,6 +10,9 @@ header {
   padding: 15px;
   text-align: left;
   color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header h1 {
@@ -28,6 +31,10 @@ button {
   padding: 10px 20px;
   cursor: pointer;
   margin-top: 10px;
+}
+
+button.logout-btn{
+  float: right;
 }
 
 button:hover {

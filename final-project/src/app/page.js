@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import Login from './components/Login';
-import './globals.css'
+
 const App = () => {
   const [loggedInUser, setLoggedInUser] = useState(null);
 
