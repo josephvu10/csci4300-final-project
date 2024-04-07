@@ -1,2 +1,2 @@
 import './Homepage.css';
-import NavBar from './NavBar';
+import NavBar from './NavBar';å
