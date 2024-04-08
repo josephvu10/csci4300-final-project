@@ -2,7 +2,7 @@ import './Song.css';
 import React from 'react';
 import Card from '../UI/Card'
 
-const Songs = (props) => {
+const Songs = () => {
     return (
        <Card className="songs">
         <img>Insert Song Image</img>
