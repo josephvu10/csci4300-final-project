@@ -1,9 +1,9 @@
 import React from "react";
-
+import "./SearchBar.css";  
 
 const SearchBar = () => {
   return (
-    <div>
+    <div className="search-container">
       <input type="text" placeholder="Search..." />
       <button type="submit">Search</button>
     </div>
