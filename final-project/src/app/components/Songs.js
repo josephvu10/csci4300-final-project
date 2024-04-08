@@ -12,10 +12,10 @@ const Songs = () => { //hello friends, i need help with how to show my page in r
             <h3 className="title">Title: Super Shy</h3>
             <p>Artist: New Jeans</p>
             <p>Album: </p>
-            <PlayBar />
             <div className='add-song-button'>
                 <button className='add-song-btn'>Add Song</button>
             </div>
+            <PlayBar />
         </div>
     );
 };
