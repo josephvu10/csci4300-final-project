@@ -4,7 +4,7 @@ import NavBar from 'NavBar.js';
 import PlayBar from 'PlayBar.js';
 import React, { useState } from'react';
 
-const Songs = () => {
+const Songs = () => { //hello friends, i need help with how to show my page in react...
     return (
         <div className="songs-container">
             <NavBar />
@@ -17,5 +17,7 @@ const Songs = () => {
                 <button className='add-song-btn'>Add Song</button>
             </div>
         </div>
-    )
-}
+    );
+};
+
+export default Songs;
