@@ -1,13 +1,13 @@
+'use client'
 import './Song.css';
-import React from 'react';
-import Card from '../UI/Card'
+import React, { useState } from'react';
 
 const Songs = () => {
     return (
-       <Card className="songs">
-        <img>Insert Song Image</img>
-        <h3 class="title">Title:</h3>
-        <p>Artist:</p>
-       </Card>
+        <div className="songs">
+            <img>Insert Song Image</img>
+            <h3 className="title">Title:</h3>
+            <p>Artist:</p>
+        </div>
     )
 }
