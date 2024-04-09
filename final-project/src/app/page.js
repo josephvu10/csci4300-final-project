@@ -1,40 +1,3 @@
-/* 'use client'
-import React, { useState } from 'react';
-import Login from './components/Login';
-
-const App = () => {
-  const [loggedInUser, setLoggedInUser] = useState(null);
-
-  const handleLogin = (username) => {
-    setLoggedInUser(username);
-  };
-
-  const handleLogout = () => {
-    setLoggedInUser(null);
-  };
-
-  return (
-    <div>
-      <header>
-        <h1>Sound Palette</h1>
-        {loggedInUser && (
-    <button className="logout-btn" onClick={handleLogout}>Logout</button>
-  )}
-      </header>
-      <main>
-        {loggedInUser ? (
-          <p>Welcome, {loggedInUser}!</p>
-        ) : (
-          <Login onLogin={handleLogin} onCreateAccount={() => console.log('Redirect to sign up')} />
-        )}
-      </main>
-    </div>
-  );
-};
-
-export default App;
-*/
-
 'use client'
 import Image from "next/image";
 import styles from "./page.module.css"; 
@@ -61,10 +24,10 @@ export default function Home() {
       <NavigationBar />
       <SearchBar />
       <div className={styles.welcomeBanner}>
-        <div className={styles.welcomeTextContainer}> {/* Add className for text container */}
+        <div className={styles.welcomeTextContainer}> 
         <div className={styles.welcomeText}>
                         <h1> Welcome to SoundPalette! </h1>
-                        <p> Company slogan... </p>
+                        <p> Where playlists paint your mood... </p>
                     </div>
         </div>
         <img src="Images/welcomeBanner.jpg" alt="banner"/>
