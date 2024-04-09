@@ -44,7 +44,7 @@ body {
 .login-container button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff; /* Blue */
+  background-color: #3F1263;
   color: #ffffff; /* White */
   border: none;
   border-radius: 4px;
@@ -52,7 +52,7 @@ body {
 }
 
 .login-container button:hover {
-  background-color: #0056b3; /* Darker blue */
+  background-color: #986EAD;
 }
 
 /* Create Account button */
@@ -61,18 +61,18 @@ body {
 }
 
 .login-container button.create-account-btn {
-  background-color: #28a745; /* Green */
+  background-color: #3F1263; 
 }
 
 .login-container button.create-account-btn:hover {
-  background-color: #218838; /* Darker green */
+  background-color: #986EAD;
 }
 
 /* Logout button */
 .logout-btn {
   margin-top: 20px;
   padding: 10px;
-  background-color: #dc3545; /* Red */
+  background-color: #3F1263; /* Red */
   color: #ffffff; /* White */
   border: none;
   border-radius: 4px;
@@ -80,5 +80,5 @@ body {
 }
 
 .logout-btn:hover {
-  background-color: #c82333; /* Darker red */
+  background-color: #986EAD; /* Darker red */
 }
