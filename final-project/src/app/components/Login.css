@@ -1,58 +1,84 @@
+/* Login.css */
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Light gray */
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
 .login-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f5f5fd; /* Lavender */
-    display: flex; /* Make container a flex container */
-    flex-direction: column; /* Stack child elements vertically */
-    justify-content: center; /* Center child elements horizontally */
-    align-items: center; /* Center child elements vertically */
-  }
-  
-  .login-container h2 {
-    margin-top: 0;
-    text-align: center;
-  }
-  
-  .login-container input[type="text"],
-  .login-container input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff; /* White */
-  }
-  
-  .login-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff; /* Blue */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .login-container button:hover {
-    background-color: #3F1263; /* Darker Blue */
-  }
-  
-  .create-account-btn {
-    text-align: center;
-  }
-  
-  .create-account-btn button {
-    background: none;
-    border: none;
-    color: #986EAD; /* Blue */
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  
-  .create-account-btn button:hover {
-    color: #0056b3; /* Darker Blue */
-  }
-  
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff; /* White */
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* Header */
+.login-container h2 {
+  margin-top: 0;
+  color: #333333; /* Dark gray */
+}
+
+/* Input fields */
+.login-container label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555555; /* Medium gray */
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: calc(100% - 10px);
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc; /* Light gray border */
+  border-radius: 4px;
+}
+
+/* Buttons */
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff; /* Blue */
+  color: #ffffff; /* White */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #0056b3; /* Darker blue */
+}
+
+/* Create Account button */
+.login-container p {
+  margin-bottom: 10px;
+}
+
+.login-container button.create-account-btn {
+  background-color: #28a745; /* Green */
+}
+
+.login-container button.create-account-btn:hover {
+  background-color: #218838; /* Darker green */
+}
+
+/* Logout button */
+.logout-btn {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #dc3545; /* Red */
+  color: #ffffff; /* White */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #c82333; /* Darker red */
+}
