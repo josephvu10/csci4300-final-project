@@ -76,9 +76,6 @@ button:hover {
   padding: 0px;
 }
 
-.logoContainer {
-  /* Add any additional styling for the logo container */
-}
 
 .logo {
   max-width: 35px; 
@@ -96,9 +93,7 @@ button:hover {
   display: inline-block;
 }
 
-.navButton {
-  /* Add styles for the navigation buttons */
-}
+
 
 .search-container {
   display: flex; 
