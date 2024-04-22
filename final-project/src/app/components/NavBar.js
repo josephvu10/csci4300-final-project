@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import './NavBar.css';
+import Login from './Login';
 
 const NavBar = () => {
   return (
     <nav className="navBar"> {/* Use class names directly */}
     <div className="logoContainer">
-        {/* Add your company logo here */}
         <img src="Images/logo.png" alt="Company Logo" className="logo" />
       </div>
     <ul className="navList">
@@ -15,7 +15,7 @@ const NavBar = () => {
           </Link>
         </li>
         <li className="navItem">
-          <Link href="/components/Login"> 
+          <Link href="../../components/Login"> 
             <button className="navButton">Login</button>
           </Link>
         </li>

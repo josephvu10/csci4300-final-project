@@ -6,9 +6,10 @@ import NavBar from "./components/NavBar";
 import { useState, useEffect } from 'react';
 
 export default function Home() {
-
   const [currentSlide, setCurrentSlide] = useState(0);
   const images = ['s1.jpg', 's2.jpg', 's3.jpg']; 
+
+  const [showLoginForm, setShowLoginForm] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,9 +19,17 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  const handleLoginClick = () => {
+    setShowLoginForm(true);
+  };
+
+  const handleCloseForm = () => {
+    setShowLoginForm(false);
+  };
+
   return (
       <main>
-      <NavigationBar />
+      <NavBar onLoginClick={handleLoginClick}  />
       <SearchBar />
       <div className={styles.welcomeBanner}>
         <div className={styles.welcomeTextContainer}> 
@@ -43,6 +52,8 @@ export default function Home() {
             />
           ))}
         </div>
+
+        {showLoginForm && <LoginForm onClose={handleCloseForm} />}
       </main>
   );
 }
