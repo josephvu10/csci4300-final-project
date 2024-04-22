@@ -1,5 +1,4 @@
 import { Roboto_Mono } from "next/font/google";
-import "./globals.css";
 
 const inter = Roboto_Mono({ subsets: ["latin"] });
 

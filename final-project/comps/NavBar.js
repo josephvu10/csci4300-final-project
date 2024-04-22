@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import './NavBar.css';
+import styles from '../styles/NavBar.module.css'
 
 const NavBar = () => {
   return (
@@ -10,12 +10,12 @@ const NavBar = () => {
       </div>
     <ul className="navList">
     <li className="navItem">
-          <Link href="/components/Login"> 
+          <Link href="/login"> 
             <button className="navButton">Create Account</button>
           </Link>
         </li>
         <li className="navItem">
-          <Link href="/components/Login"> 
+          <Link href="/login"> 
             <button className="navButton">Login</button>
           </Link>
         </li>

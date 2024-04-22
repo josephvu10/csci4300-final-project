@@ -1,9 +1,8 @@
 'use client'
 import Image from "next/image";
-import styles from "./page.module.css"; 
-import SearchBar from "./components/SearchBar";
-import NavigationBar from "./components/NavBar";
-import NavBar from "./components/NavBar";
+import styles from "../styles/Home.module.css"; 
+import SearchBar from "../comps/SearchBar";
+import NavBar from "../comps/NavBar";
 import { useState, useEffect } from 'react';
 
 export default function Home() {
@@ -21,7 +20,7 @@ export default function Home() {
 
   return (
       <main>
-      <NavigationBar />
+        <NavBar />
       <SearchBar />
       <div className={styles.welcomeBanner}>
         <div className={styles.welcomeTextContainer}> 
