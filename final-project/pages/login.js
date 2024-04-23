@@ -29,42 +29,44 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <div className={styles.loginContainer}>
-      <header>
-        <div className={styles.header}>
-          <h2>Login</h2>
-          <button className={styles.homeButton} onClick={handleGoToHome}>Home</button>
-        </div>
-      </header>
-      <div>
-        {loggedInUser ? (
-          <>
-            <p>Welcome, {loggedInUser}!</p>
-            <button className={styles.logoutBtn} onClick={handleLogout}>Logout</button>
-          </>
-        ) : (
-          <div>
-            <label className={styles.label}>Username:</label>
-            <input 
-              type="text" 
-              value={username} 
-              onChange={(e) => setUsername(e.target.value)} 
-              className={styles.inputField}
-            />
-            <label className={styles.label}>Password:</label>
-            <input 
-              type="password" 
-              value={password} 
-              onChange={(e) => setPassword(e.target.value)} 
-              className={styles.inputField}
-            />
-            <button className={styles.loginButton} onClick={handleLogin}>Login</button>
-            <p>Don't have an account?</p>
-            <Link href="/createAccount">
-              <button className={`${styles.loginButton} ${styles.createAccountBtn}`}>Create Account</button>
-            </Link>
+    <div className={styles.loginPage}>
+      <div className={styles.loginContainer}>
+        <header>
+          <div className={styles.header}>
+            <h2>Login</h2>
+            <button className={styles.homeButton} onClick={handleGoToHome}>Home</button>
           </div>
-        )}
+        </header>
+        <div className={styles.loginContent}>
+          {loggedInUser ? (
+            <>
+              <p>Welcome, {loggedInUser}!</p>
+              <button className={styles.logoutBtn} onClick={handleLogout}>Logout</button>
+            </>
+          ) : (
+            <div className={styles.loginForm}>
+              <label className={styles.label}>Username:</label>
+              <input 
+                type="text" 
+                value={username} 
+                onChange={(e) => setUsername(e.target.value)} 
+                className={styles.inputField}
+              />
+              <label className={styles.label}>Password:</label>
+              <input 
+                type="password" 
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)} 
+                className={styles.inputField}
+              />
+              <button className={styles.loginButton} onClick={handleLogin}>Login</button>
+              <p>Don't have an account?</p>
+              <Link href="/createAccount">
+                <button className={`${styles.loginButton} ${styles.createAccountBtn}`}>Create Account</button>
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
