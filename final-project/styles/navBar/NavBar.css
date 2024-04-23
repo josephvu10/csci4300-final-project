@@ -1,0 +1,54 @@
+
+/* 
+.navBar {
+    background-color: grey;
+    padding: 10px;
+  }
+  
+  .navList {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navItem {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .navItem a {
+    color: white;
+    text-decoration: none;
+  }
+*/
+
+.navBar {
+  display: flex;
+  justify-content: space-between; /* Align children horizontally with space between them */
+  align-items: center; /* Center items vertically */
+  padding: 0px;
+}
+
+.logoContainer {
+  /* Add any additional styling for the logo container */
+}
+
+.logo {
+  max-width: 35px; 
+}
+
+.navList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navItem {
+  margin-left: 10px; 
+  display: inline-block;
+}
+
+.navButton {
+  /* Add styles for the navigation buttons */
+}

@@ -1,8 +1,14 @@
 'use client'
 import Image from "next/image";
+<<<<<<< HEAD:final-project/pages/index.js
 import styles from "../styles/Home.module.css"; 
 import SearchBar from "../comps/SearchBar";
 import NavBar from "../comps/NavBar";
+=======
+import styles from "./page.module.css"; 
+import SearchBar from "./components/search/page";
+import NavigationBar from "./components/navBar/page";
+>>>>>>> c3dda5d (can change pages now):final-project/src/app/page.js
 import { useState, useEffect } from 'react';
 
 export default function Home() {
