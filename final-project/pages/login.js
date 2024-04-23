@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 import styles from '../styles/login.module.css';
+import { useRouter } from 'next/router';
 
-const Login = ({ onLogin = username => console.log('Default login attempt:', username), onCreateAccount }) => {
+const Login = ({ onLogin }) => {
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -57,7 +58,9 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
             />
             <button className={styles.loginButton} onClick={handleLogin}>Login</button>
             <p>Don't have an account?</p>
-            <button className={`${styles.loginButton} ${styles.createAccountBtn}`} onClick={onCreateAccount}>Create Account</button>
+            <Link href="/createAccount">
+              <button className={`${styles.loginButton} ${styles.createAccountBtn}`}>Create Account</button>
+            </Link>
           </div>
         )}
       </div>
