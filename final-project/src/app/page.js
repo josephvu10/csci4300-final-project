@@ -1,9 +1,8 @@
 'use client'
 import Image from "next/image";
 import styles from "./page.module.css"; 
-import SearchBar from "./components/SearchBar";
-import NavigationBar from "./components/NavBar";
-import NavBar from "./components/NavBar";
+import SearchBar from "./components/search/page";
+import NavigationBar from "./components/navBar/page";
 import { useState, useEffect } from 'react';
 
 export default function Home() {

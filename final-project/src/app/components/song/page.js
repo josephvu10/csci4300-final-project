@@ -4,7 +4,7 @@ import NavBar from 'NavBar.js';
 import PlayBar from 'PlayBar.js';
 import React, { useState } from'react';
 
-const Songs = () => { //hello friends, i need help with how to show my page in react...
+const Song = () => { //hello friends, i need help with how to show my page in react...
     return ( //make header and playbar at the bottom as individual react components
         <div>
             <div className="songs-container">
@@ -31,4 +31,4 @@ const Songs = () => { //hello friends, i need help with how to show my page in r
     );
 };
 
-export default Songs;
+export default Song;

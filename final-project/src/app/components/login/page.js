@@ -1,5 +1,7 @@
 'use client'
 import React, { useState } from 'react';
+import SearchBar from "../search/page";
+import NavigationBar from "../navBar/page";
 import './Login.css';
 
 const Login = ({ onLogin, onCreateAccount }) => {

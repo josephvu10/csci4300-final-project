@@ -10,15 +10,16 @@ const NavBar = () => {
       </div>
     <ul className="navList">
     <li className="navItem">
-          <Link href="/components/Login"> 
+          <Link href='/components/login'>
             <button className="navButton">Create Account</button>
           </Link>
-        </li>
-        <li className="navItem">
-          <Link href="/components/Login"> 
+    </li>
+    
+    <li className="navItem2">
+          <Link href='/components/login'> 
             <button className="navButton">Login</button>
           </Link>
-        </li>
+    </li>
         {/* Add more navigation items here */}
       </ul>
   </nav>
