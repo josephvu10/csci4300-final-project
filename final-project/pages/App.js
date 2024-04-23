@@ -15,6 +15,7 @@ function App() {
         <Route exact path='/' element={<Homepage />} />
         <Route path='/login' element={<Login />} />
         <Route path='/createAccount' element={<CreateAccount />} />
+        <Route path='/authenticatedPage' element={<AuthenticatedPage />} />
         <Route path='/playlistpage' element={<Playlistpage />} />
       </Routes>
     </Router>

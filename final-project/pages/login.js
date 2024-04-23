@@ -10,11 +10,13 @@ const Login = ({ onLogin }) => {
   const router = useRouter();
 
   const handleLogin = () => {
-    if (username.trim() !== '') {
+    // Simulated login logic, replace with actual authentication logic
+    if (username === 'admin' && password === 'password') {
       onLogin(username);
       setLoggedInUser(username);
+      router.push('/authenticated'); // Redirect to authenticated page
     } else {
-      alert('Please enter a username.');
+      alert('Invalid username or password.');
     }
   };
 
