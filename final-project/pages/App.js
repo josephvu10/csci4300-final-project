@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 import Homepage from './components/Homepage';
 import Login from './components/Login';
+import CreateAccount from './createAccount';
 import Playlistpage from './components/Playlistpage';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Homepage />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/createAccount' element={<CreateAccount />} />
         <Route path='/playlistpage' element={<Playlistpage />} />
       </Routes>
     </Router>

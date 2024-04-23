@@ -1,11 +1,12 @@
-'use client'
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import styles from '../styles/login.module.css';
 
 const Login = ({ onLogin = username => console.log('Default login attempt:', username), onCreateAccount }) => {
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter();
 
   const handleLogin = () => {
     if (username.trim() !== '') {
@@ -20,10 +21,17 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
     setLoggedInUser(null);
   };
 
+  const handleGoToHome = () => {
+    router.push('/');
+  };
+
   return (
     <div className={styles.loginContainer}>
       <header>
-        <h2>Login</h2>
+        <div className={styles.header}>
+          <h2>Login</h2>
+          <button className={styles.homeButton} onClick={handleGoToHome}>Home</button>
+        </div>
       </header>
       <div>
         {loggedInUser ? (
