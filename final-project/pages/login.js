@@ -8,20 +8,20 @@ import axios from 'axios'; // Import Axios
 
 const Login = ({ onLogin = username => console.log('Default login attempt:', username), onCreateAccount }) => {
   const [loggedInUser, setLoggedInUser] = useState(null);
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
   const [error, setError] = useState(null); // State to store error message
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('/api/login', { username, password });
+      const response = await axios.post('/api/login', { email, password });
       const { data } = response;
       onLogin(data.username); // Pass the username to the parent component or update global state
       // router.push('/authenticated'); // Redirect to authenticated page
       setLoggedInUser(data.username); // Update loggedInUser state instead of redirecting
     } catch (error) {
-      setError('Invalid username or password.');
+      setError('Invalid email or password.');
     }
   };
 
@@ -51,12 +51,12 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
             <hr className={styles.divisionLine} />
             {error && <p className={styles.error}>{error}</p>} {/* Display error message */}
             <div className={styles.inputContainer}>
-              <label className={styles.label}>Username</label>
+              <label className={styles.label}>Email</label>
               <input 
-                type="text" 
-                placeholder="Username"
-                value={username} 
-                onChange={(e) => setUsername(e.target.value)} 
+                type="email" 
+                placeholder="Email"
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
                 className={styles.inputField}
               />
             </div>
@@ -78,11 +78,10 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
             <button className={styles.loginButton} onClick={handleLogin}>Log In</button>
             <hr className={styles.divisionLine} />
             <p>Don't have an account? 
-  <Link href="/createAccount">
-    <span className={styles.signUpLink}>Sign up for SoundPalette</span>
-  </Link>
-</p>
-
+              <Link href="/createAccount">
+                <span className={styles.signUpLink}>Sign up for SoundPalette</span>
+              </Link>
+            </p>
           </div>
         )}
       </div>
