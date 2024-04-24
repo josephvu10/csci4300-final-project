@@ -6,16 +6,15 @@ import axios from 'axios'; // Import Axios
 import styles from '../styles/login.module.css';
 
 const CreateAccount = ({ onLogin }) => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [email, setEmail] = useState('');
   const router = useRouter();
 
   const handleCreateAccount = () => {
-    if (username.trim() !== '' && password.trim() !== '' && password === confirmPassword) {
+    if (email.trim() !== '' && password.trim() !== '' && password === confirmPassword) {
       // Make a POST request to the backend API endpoint
-      axios.post('/api/create-account', { username, password, email })
+      axios.post('/api/create-account', { email, password })
         .then(response => {
           const userData = response.data;
           onLogin(userData.username);
@@ -28,7 +27,7 @@ const CreateAccount = ({ onLogin }) => {
       if (password !== confirmPassword) {
         alert('Passwords do not match.');
       } else {
-        alert('Please enter a username, password, and confirm password.');
+        alert('Please enter an email, password, and confirm password.');
       }
     }
   };
@@ -47,11 +46,11 @@ const CreateAccount = ({ onLogin }) => {
         </div>
       </header>
       <div>
-        <label className={styles.label}>Username:</label>
+        <label className={styles.label}>Email:</label>
         <input 
-          type="text" 
-          value={username} 
-          onChange={(e) => setUsername(e.target.value)} 
+          type="email" 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
           className={styles.inputField}
         />
         <label className={styles.label}>Password:</label>
@@ -66,13 +65,6 @@ const CreateAccount = ({ onLogin }) => {
           type="password" 
           value={confirmPassword} 
           onChange={(e) => setConfirmPassword(e.target.value)} 
-          className={styles.inputField}
-        />
-        <label className={styles.label}>Email:</label>
-        <input 
-          type="email" 
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
           className={styles.inputField}
         />
         <button className={styles.loginButton} onClick={handleCreateAccount}>Create Account</button>
