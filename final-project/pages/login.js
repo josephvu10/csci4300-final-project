@@ -7,7 +7,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import LinkedLogo from "../comps/LinkedLogo";
 import axios from 'axios'; // Import Axios
 
-const Login = ({ onLogin = username => console.log('Default login attempt:', username), onCreateAccount }) => {
+const Login = ({ onLogin = email => console.log('Default login attempt:', email), onCreateAccount }) => {
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -53,11 +53,11 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
             {error && <p className={styles.error}>{error}</p>} {/* Display error message */}
             <div className={styles.inputContainer}>
               <label className={styles.label}>Email</label>
-              <input 
-                type="email" 
+              <input
+                type="text"
                 placeholder="Email"
-                value={email} 
-                onChange={(e) => setEmail(e.target.value)} 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className={styles.inputField}
               />
             </div>
@@ -80,7 +80,7 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
             <hr className={styles.divisionLine} />
             <p>Don't have an account? 
   <Link href="/createAccount">
-    <span className={styles.signUpLink}>Sign up for SoundPalette</span>
+    <span className={styles.signUpLink}> Sign up for SoundPalette</span>
   </Link>
 </p>
 
