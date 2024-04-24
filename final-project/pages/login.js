@@ -1,10 +1,10 @@
-'use client'
 import React, { useState } from 'react';
+import Link from 'next/link';
 import styles from '../styles/login.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
-const Login = ({ onLogin = username => console.log('Default login attempt:', username), onCreateAccount }) => {
+const Login = ({ onLogin }) => {
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -12,11 +12,13 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
 
 
   const handleLogin = () => {
-    if (username.trim() !== '') {
+    // Simulated login logic, replace with actual authentication logic
+    if (username === 'admin' && password === 'password') {
       onLogin(username);
       setLoggedInUser(username);
+      router.push('/authenticated'); // Redirect to authenticated page
     } else {
-      alert('Please enter a username.');
+      alert('Invalid username or password.');
     }
   };
 
