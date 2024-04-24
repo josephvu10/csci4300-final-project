@@ -1,26 +1,29 @@
+'use client'
 import Link from 'next/link';
-import styles from '../styles/NavBar.module.css'
+import styles from '../styles/NavBar.module.css';
 
 const NavBar = () => {
   return (
-    <nav className="navBar"> {/* Use class names directly */}
-    <div className="logoContainer">
+    <nav className={styles.navBar}>
+      <div className={styles.logoContainer}>
         {/* Add your company logo here */}
-        <img src="Images/logo.png" alt="Company Logo" className="logo" />
+        <img src="/Images/logo.png" alt="Company Logo" className={styles.logo} />
       </div>
-    <ul className="navList">
-    <li className="navItem">
+      <ul className={styles.navList}>
+        <li className={styles.navItem}>
           <Link href="/createAccount"> 
-            <button className="navButton">Create Account</button>
+            <button className={styles.navButton}>Create Account</button>
           </Link>
         </li>
-        <li className="navItem">
+        <li className={styles.navItem}>
           <Link href="/login"> 
-            <button className="navButton">Login</button>
+            <button className={styles.navButton}>Login</button>
           </Link>
         </li>
         {/* Add more navigation items here */}
       </ul>
-  </nav>
-);
+    </nav>
+  );
 };
+
+export default NavBar;

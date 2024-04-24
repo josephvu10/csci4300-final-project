@@ -19,30 +19,37 @@ export default function Home() {
   }, []);
 
   return (
-      <main>
-        <NavBar />
+    <main>
+      <NavBar />
       <SearchBar />
       <div className={styles.welcomeBanner}>
         <div className={styles.welcomeTextContainer}> 
-        <div className={styles.welcomeText}>
-                        <h1> Welcome to SoundPalette! </h1>
-                        <p> Where playlists paint your mood... </p>
-                    </div>
+          <div className={styles.welcomeText}>
+            <h1>Welcome to SoundPalette!</h1>
+            <p>Where playlists paint your mood...</p>
+          </div>
         </div>
-        <img src="Images/welcomeBanner.jpg" alt="banner"/>
+        <Image
+          src="/Images/welcomeBanner.jpg"
+          alt="banner"
+          width={800} // Adjust width as needed
+          height={400} // Adjust height as needed
+        />
       </div>
 
       <div className={styles.slideshow}>
-          {images.map((image, index) => (
-            <img
-              key={index}
-              src={`Images/${image}`}
-              alt={`Slide ${index + 1}`}
-              className={`${styles.slide} ${currentSlide === index ? styles.active : ''}`}
-              style={{ animationDelay: `${index * 5}s` }}
-            />
-          ))}
-        </div>
-      </main>
+        {images.map((image, index) => (
+          <Image
+            key={index}
+            src={`/Images/${image}`}
+            alt={`Slide ${index + 1}`}
+            width={800} // Adjust width as needed
+            height={400} // Adjust height as needed
+            className={`${styles.slide} ${currentSlide === index ? styles.active : ''}`}
+            style={{ animationDelay: `${index * 5}s` }}
+          />
+        ))}
+      </div>
+    </main>
   );
 }
