@@ -4,6 +4,7 @@ import Link from 'next/link';
 import styles from '../styles/login.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import LinkedLogo from "../comps/LinkedLogo";
 import axios from 'axios'; // Import Axios
 
 const Login = ({ onLogin = username => console.log('Default login attempt:', username), onCreateAccount }) => {
@@ -34,11 +35,11 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
     setShowPassword(!showPassword);
   };
 
+
   return (
     <>
-      <header className={styles.header}>
-        <img src="Images/logo2.png" alt="Company Logo" className="logo" />
-      </header>
+      <LinkedLogo />
+
       <div className={styles.loginContainer}>
         {loggedInUser ? (
           <div className={styles.card}>
@@ -63,11 +64,11 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
             <div className={styles.inputContainer}>
               <label className={styles.label}>Password</label>
               <div className={styles.passwordInputWrapper}>
-                <input 
+                <input
                   type={showPassword ? "text" : "password"} // Toggle between text and password type
                   placeholder="Password"
-                  value={password} 
-                  onChange={(e) => setPassword(e.target.value)} 
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className={styles.inputField}
                 />
                 <div className={styles.togglePassword} onClick={togglePasswordVisibility}>
@@ -78,10 +79,11 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
             <button className={styles.loginButton} onClick={handleLogin}>Log In</button>
             <hr className={styles.divisionLine} />
             <p>Don't have an account? 
-              <Link href="/createAccount">
-                <span className={styles.signUpLink}>Sign up for SoundPalette</span>
-              </Link>
-            </p>
+  <Link href="/createAccount">
+    <span className={styles.signUpLink}>Sign up for SoundPalette</span>
+  </Link>
+</p>
+
           </div>
         )}
       </div>
