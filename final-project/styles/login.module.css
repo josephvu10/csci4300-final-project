@@ -49,7 +49,8 @@ body {
   color: #FCFCFC;
 }
 .loginContainer .signUpLink:hover {
-  color: #8F69B5; /* Change color on hover */
+  color: #8F69B5; 
+  cursor: pointer;
 }
 
 /* Input fields */
