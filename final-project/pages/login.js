@@ -47,20 +47,22 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
             <h2> Log in to SoundPalette </h2>
             <hr className={styles.divisionLine} />
             <div className={styles.inputContainer}>
-              <label className={styles.label}>Username:</label>
+              <label className={styles.label}>Username</label>
               <input 
                 type="text" 
+                placeholder="Username"
                 value={username} 
                 onChange={(e) => setUsername(e.target.value)} 
                 className={styles.inputField}
               />
             </div>
             <div className={styles.inputContainer}>
-              <label className={styles.label}>Password:</label>
+              <label className={styles.label}>Password</label>
               <div className={styles.passwordInputWrapper}>
               <input 
                 type={showPassword ? "text" : "password"} // Toggle between text and password type
                 // type="password" 
+                placeholder="Password"
                 value={password} 
                 onChange={(e) => setPassword(e.target.value)} 
                 className={styles.inputField}
