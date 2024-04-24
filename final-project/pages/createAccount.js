@@ -1,19 +1,17 @@
-import { useRouter } from 'next/router';
+'use client'
 import React, { useState } from 'react';
-import axios from 'axios'; // Import Axios
-import LinkedLogo from "../comps/LinkedLogo";
 import Link from 'next/link';
+import styles from '../styles/createAccount.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-
-import styles from '../styles/createAccount.module.css';
+import LinkedLogo from "../comps/LinkedLogo";
+import axios from 'axios'; // Import Axios
 
 const CreateAccount = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const router = useRouter();
-  const [showPassword, setShowPassword] = useState(false); 
+  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
 
   const handleCreateAccount = () => {
     if (email.trim() !== '' && password.trim() !== '' && password === confirmPassword) {
@@ -21,7 +19,7 @@ const CreateAccount = ({ onLogin }) => {
       axios.post('/api/signup', { email, password}) // Remove username from request payload
         .then(response => {
           const userData = response.data;
-          onLogin(userData.username);
+          onLogin(userData.email); // Pass the email to the parent component or update global state
         })
         .catch(error => {
           console.error('Error creating account:', error);
@@ -58,7 +56,6 @@ const CreateAccount = ({ onLogin }) => {
         <label className={styles.label}>Password </label>
         <div className={styles.passwordInputWrapper}>
         <input 
-          // type="password" 
           type={showPassword ? "text" : "password"} 
           value={password} 
           placeholder="Password"
@@ -72,7 +69,6 @@ const CreateAccount = ({ onLogin }) => {
         <label className={styles.label}>Confirm Password </label>
         <div className={styles.passwordInputWrapper}>
         <input 
-          // type="password" 
           type={showPassword ? "text" : "password"} 
           placeholder="Confirm Password"
           value={confirmPassword} 
@@ -94,6 +90,5 @@ const CreateAccount = ({ onLogin }) => {
     </>
   );
 };
-
 
 export default CreateAccount;
