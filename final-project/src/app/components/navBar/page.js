@@ -1,22 +1,15 @@
 import Link from 'next/link';
-import styles from '../styles/NavBar.module.css'
+import './NavBar.css';
 
 const NavBar = () => {
   return (
     <nav className="navBar"> {/* Use class names directly */}
     <div className="logoContainer">
+        {/* Add your company logo here */}
         <img src="Images/logo.png" alt="Company Logo" className="logo" />
       </div>
     <ul className="navList">
     <li className="navItem">
-<<<<<<<< HEAD:final-project/comps/NavBar.js
-          <Link href="/createAccount"> 
-            <button className="navButton">Create Account</button>
-          </Link>
-        </li>
-        <li className="navItem">
-          <Link href="/login"> 
-========
           <Link href='/components/login'>
             <button className="navButton">Create Account</button>
           </Link>
@@ -24,7 +17,6 @@ const NavBar = () => {
     
     <li className="navItem2">
           <Link href='/components/login'> 
->>>>>>>> c3dda5d (can change pages now):final-project/styles/navBar/page.js
             <button className="navButton">Login</button>
           </Link>
     </li>

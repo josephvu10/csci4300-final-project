@@ -1,21 +1,14 @@
 'use client'
 import Image from "next/image";
-<<<<<<< HEAD:final-project/pages/index.js
-import styles from "../styles/Home.module.css"; 
-import SearchBar from "../comps/SearchBar";
-import NavBar from "../comps/NavBar";
-=======
 import styles from "./page.module.css"; 
 import SearchBar from "./components/search/page";
 import NavigationBar from "./components/navBar/page";
->>>>>>> c3dda5d (can change pages now):final-project/src/app/page.js
 import { useState, useEffect } from 'react';
 
 export default function Home() {
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const images = ['s1.jpg', 's2.jpg', 's3.jpg']; 
-
-  const [showLoginForm, setShowLoginForm] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,17 +18,9 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleLoginClick = () => {
-    setShowLoginForm(true);
-  };
-
-  const handleCloseForm = () => {
-    setShowLoginForm(false);
-  };
-
   return (
       <main>
-        <NavBar />
+      <NavigationBar />
       <SearchBar />
       <div className={styles.welcomeBanner}>
         <div className={styles.welcomeTextContainer}> 
@@ -58,8 +43,6 @@ export default function Home() {
             />
           ))}
         </div>
-
-        {showLoginForm && <LoginForm onClose={handleCloseForm} />}
       </main>
   );
 }
