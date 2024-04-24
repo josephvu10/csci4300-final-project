@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from '../styles/login.module.css';
@@ -11,14 +12,14 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
 
 
-  const handleLogin = () => {
-    // Simulated login logic, replace with actual authentication logic
-    if (username === 'admin' && password === 'password') {
-      onLogin(username);
-      setLoggedInUser(username);
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('/api/login', { username, password });
+      const { data } = response;
+      onLogin(data.username); // Pass the username to the parent component or update global state
       router.push('/authenticated'); // Redirect to authenticated page
-    } else {
-      alert('Invalid username or password.');
+    } catch (error) {
+      setError('Invalid username or password.');
     }
   };
 

@@ -12,7 +12,7 @@ const auth = async (req, res, next) => {
 
                 const verified = jwt.verify(token, process.env.JWT_SECRET); //user env var for JWT secret
                 if (!verified)
-                    return res.status(401).json({ msg: "Toekn verification failed, authorization denied" });
+                    return res.status(401).json({ msg: "Token verification failed, authorization denied" });
             
         // since the token was made out of the document id
         req.user = verified.id;

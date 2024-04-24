@@ -17,7 +17,7 @@ userRouter.post("/signup", async (req, res) => {
             .status(400)
             .json({ msg: "Password should be atleast 6 characters" });
         }
-        if (confirmePassword !== password) {
+        if (confirmPassword !== password) {
             return res.status(400).json({ msg: "Both the passwords don't match" });
         }
         const existingUser = await User.findOne({ email });
@@ -34,6 +34,7 @@ userRouter.post("/signup", async (req, res) => {
         res.json(savedUser.username);
     }
     catch (err) {
+        console.error('Error creating user:', err); // Log the error
         res.status(500).json({ error: err.message });
     }
 });
@@ -69,9 +70,9 @@ userRouter.post("/login", async (req, res) => {
 userRouter.post("/tokenIsValid", async (req, res) => {
     try {
         const token = req.header("Authorization");
-        if(!token) return res.jspm(false);
+        if(!token) return res.json(false);
         const verified = jwt.verify(tokenParts[1], process.env.JWT_SECRET);
-        if (!verified) return res.jsom(false);
+        if (!verified) return res.json(false);
         const user = await User.findById(verified.id);
         if (!user) return res.json(false);
         return res.json(true);
@@ -86,3 +87,4 @@ router.delete('/:id', auth, (req, res) => {
         .then((item) => res.json({ msg: 'Item entry deleted successfully' }))
         .catch((err) => res.status(404).json({ error: 'No such a item' }));
 });
+
