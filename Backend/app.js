@@ -10,7 +10,6 @@ app.use('/api/items', items);
 
 app.use(cors({origin: true, credentials: true}));
 app.use(express.json({extended: false}));
-app.get('/', (req, res) => res.send('Hello World!'));
 
 app.get('/user/:id', (req, res) => {
     res.send(`user ${req.params.id}`);

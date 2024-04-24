@@ -17,7 +17,7 @@ userRouter.post("/signup", async (req, res) => {
             .status(400)
             .json({ msg: "Password should be atleast 6 characters" });
         }
-        if (confirmePassword !== password) {
+        if (confirmPassword !== password) {
             return res.status(400).json({ msg: "Both the passwords don't match" });
         }
         const existingUser = await User.findOne({ email });
