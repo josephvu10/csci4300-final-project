@@ -4,20 +4,22 @@ import Link from 'next/link';
 import styles from '../styles/login.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios'; // Import Axios
 
 const Login = ({ onLogin = username => console.log('Default login attempt:', username), onCreateAccount }) => {
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
-
+  const [error, setError] = useState(null); // State to store error message
 
   const handleLogin = async () => {
     try {
       const response = await axios.post('/api/login', { username, password });
       const { data } = response;
       onLogin(data.username); // Pass the username to the parent component or update global state
-      router.push('/authenticated'); // Redirect to authenticated page
+      // router.push('/authenticated'); // Redirect to authenticated page
+      setLoggedInUser(data.username); // Update loggedInUser state instead of redirecting
     } catch (error) {
       setError('Invalid username or password.');
     }
@@ -27,15 +29,15 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
     setLoggedInUser(null);
   };
 
-    // Function to toggle password visibility
-    const togglePasswordVisibility = () => {
-      setShowPassword(!showPassword);
-    };
+  // Function to toggle password visibility
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   return (
     <>
       <header className={styles.header}>
-      <img src="Images/logo2.png" alt="Company Logo" className="logo" />
+        <img src="Images/logo2.png" alt="Company Logo" className="logo" />
       </header>
       <div className={styles.loginContainer}>
         {loggedInUser ? (
@@ -47,6 +49,7 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
           <div className={styles.card}>
             <h2> Log in to SoundPalette </h2>
             <hr className={styles.divisionLine} />
+            {error && <p className={styles.error}>{error}</p>} {/* Display error message */}
             <div className={styles.inputContainer}>
               <label className={styles.label}>Username</label>
               <input 
@@ -60,23 +63,26 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
             <div className={styles.inputContainer}>
               <label className={styles.label}>Password</label>
               <div className={styles.passwordInputWrapper}>
-              <input 
-                type={showPassword ? "text" : "password"} // Toggle between text and password type
-                // type="password" 
-                placeholder="Password"
-                value={password} 
-                onChange={(e) => setPassword(e.target.value)} 
-                className={styles.inputField}
-              />
-              <div className={styles.togglePassword} onClick={togglePasswordVisibility}>
+                <input 
+                  type={showPassword ? "text" : "password"} // Toggle between text and password type
+                  placeholder="Password"
+                  value={password} 
+                  onChange={(e) => setPassword(e.target.value)} 
+                  className={styles.inputField}
+                />
+                <div className={styles.togglePassword} onClick={togglePasswordVisibility}>
                   <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
                 </div>
-                </div>
+              </div>
             </div>
             <button className={styles.loginButton} onClick={handleLogin}>Log In</button>
             <hr className={styles.divisionLine} />
-            <p>Don't have an account? <a className={styles.signUpLink} onClick={onCreateAccount}>Sign up for SoundPalette</a></p>
-          {/* <button className={`${styles.loginButton} ${styles.createAccountBtn}`} onClick={onCreateAccount}>Create Account</button> */}
+            <p>Don't have an account? 
+  <Link href="/createAccount">
+    <span className={styles.signUpLink}>Sign up for SoundPalette</span>
+  </Link>
+</p>
+
           </div>
         )}
       </div>
