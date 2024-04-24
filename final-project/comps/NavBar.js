@@ -1,6 +1,10 @@
 import Link from 'next/link';
+<<<<<<< HEAD:final-project/src/app/components/NavBar.js
 import './NavBar.css';
 import Login from './Login';
+=======
+import styles from '../styles/NavBar.module.css'
+>>>>>>> origin/restructure:final-project/comps/NavBar.js
 
 const NavBar = () => {
   return (
@@ -10,12 +14,16 @@ const NavBar = () => {
       </div>
     <ul className="navList">
     <li className="navItem">
-          <Link href="/components/Login"> 
+          <Link href="/createAccount"> 
             <button className="navButton">Create Account</button>
           </Link>
         </li>
         <li className="navItem">
+<<<<<<< HEAD:final-project/src/app/components/NavBar.js
           <Link href="../../components/Login"> 
+=======
+          <Link href="/login"> 
+>>>>>>> origin/restructure:final-project/comps/NavBar.js
             <button className="navButton">Login</button>
           </Link>
         </li>

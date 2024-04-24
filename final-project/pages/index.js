@@ -1,8 +1,14 @@
 'use client'
 import Image from "next/image";
+<<<<<<< HEAD:final-project/src/app/page.js
 import styles from "./page.module.css"; 
 import SearchBar from "./components/SearchBar";
 import NavBar from "./components/NavBar";
+=======
+import styles from "../styles/Home.module.css"; 
+import SearchBar from "../comps/SearchBar";
+import NavBar from "../comps/NavBar";
+>>>>>>> origin/restructure:final-project/pages/index.js
 import { useState, useEffect } from 'react';
 
 export default function Home() {
@@ -29,7 +35,11 @@ export default function Home() {
 
   return (
       <main>
+<<<<<<< HEAD:final-project/src/app/page.js
       <NavBar onLoginClick={handleLoginClick}  />
+=======
+        <NavBar />
+>>>>>>> origin/restructure:final-project/pages/index.js
       <SearchBar />
       <div className={styles.welcomeBanner}>
         <div className={styles.welcomeTextContainer}> 
