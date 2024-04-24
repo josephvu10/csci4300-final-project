@@ -35,10 +35,7 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
     setShowPassword(!showPassword);
   };
 
-    const handleGoToHome = () => {
-      // Redirect to the index page (home)
-      router.push('/');
-    };
+
   return (
     <>
       <LinkedLogo />
@@ -83,7 +80,7 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
             <hr className={styles.divisionLine} />
             <p>Don't have an account? 
   <Link href="/createAccount">
-    <span className={styles.signUpLink}>Sign up for SoundPalette</span>
+    <span className={styles.signUpLink}> Sign up for SoundPalette</span>
   </Link>
 </p>
 

@@ -3,6 +3,9 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import axios from 'axios'; // Import Axios
 import LinkedLogo from "../comps/LinkedLogo";
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 import styles from '../styles/createAccount.module.css';
 
@@ -11,6 +14,7 @@ const CreateAccount = ({ onLogin }) => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const router = useRouter();
+  const [showPassword, setShowPassword] = useState(false); 
 
   const handleCreateAccount = () => {
     if (email.trim() !== '' && password.trim() !== '' && password === confirmPassword) {
@@ -33,34 +37,60 @@ const CreateAccount = ({ onLogin }) => {
     }
   };
 
+  // Function to toggle password visibility
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <>
     <LinkedLogo />
     <div className={styles.createAccountContainer}>
-      <div>
-        <label className={styles.label}>Email:</label>
+    <h2> Sign up to start <br /> creating </h2>
+    <hr className={styles.divisionLine} />
+        <label className={styles.label}>Email </label>
         <input 
           type="email" 
           value={email} 
+          placeholder="name@domain.com"
           onChange={(e) => setEmail(e.target.value)} 
           className={styles.inputField}
         />
-        <label className={styles.label}>Password:</label>
+        <label className={styles.label}>Password </label>
+        <div className={styles.passwordInputWrapper}>
         <input 
-          type="password" 
+          // type="password" 
+          type={showPassword ? "text" : "password"} 
           value={password} 
+          placeholder="Password"
           onChange={(e) => setPassword(e.target.value)} 
           className={styles.inputField}
         />
-        <label className={styles.label}>Confirm Password:</label>
+        <div className={styles.togglePassword} onClick={togglePasswordVisibility}>
+                  <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
+                </div>
+              </div>
+        <label className={styles.label}>Confirm Password </label>
+        <div className={styles.passwordInputWrapper}>
         <input 
-          type="password" 
+          // type="password" 
+          type={showPassword ? "text" : "password"} 
+          placeholder="Confirm Password"
           value={confirmPassword} 
           onChange={(e) => setConfirmPassword(e.target.value)} 
           className={styles.inputField}
         />
+        <div className={styles.togglePassword} onClick={togglePasswordVisibility}>
+                  <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
+                </div>
+              </div>
         <button className={styles.loginButton} onClick={handleCreateAccount}>Create Account</button>
-      </div>
+        <hr className={styles.divisionLine} />
+        <p>Already have an account? 
+  <Link href="/login">
+    <span className={styles.loginLink}> Log in here</span>
+  </Link>
+</p>
     </div>
     </>
   );
