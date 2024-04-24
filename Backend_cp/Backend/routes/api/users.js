@@ -87,4 +87,3 @@ router.delete('/:id', auth, (req, res) => {
         .then((item) => res.json({ msg: 'Item entry deleted successfully' }))
         .catch((err) => res.status(404).json({ error: 'No such a item' }));
 });
-

@@ -52,22 +52,22 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
             {error && <p className={styles.error}>{error}</p>} {/* Display error message */}
             <div className={styles.inputContainer}>
               <label className={styles.label}>Username</label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 placeholder="Username"
-                value={username} 
-                onChange={(e) => setUsername(e.target.value)} 
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 className={styles.inputField}
               />
             </div>
             <div className={styles.inputContainer}>
               <label className={styles.label}>Password</label>
               <div className={styles.passwordInputWrapper}>
-                <input 
+                <input
                   type={showPassword ? "text" : "password"} // Toggle between text and password type
                   placeholder="Password"
-                  value={password} 
-                  onChange={(e) => setPassword(e.target.value)} 
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className={styles.inputField}
                 />
                 <div className={styles.togglePassword} onClick={togglePasswordVisibility}>
@@ -77,11 +77,11 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
             </div>
             <button className={styles.loginButton} onClick={handleLogin}>Log In</button>
             <hr className={styles.divisionLine} />
-            <p>Don't have an account? 
-  <Link href="/createAccount">
-    <span className={styles.signUpLink}>Sign up for SoundPalette</span>
-  </Link>
-</p>
+            <p>Don't have an account?
+              <Link href="/createAccount">
+                <span className={styles.signUpLink}>Sign up for SoundPalette</span>
+              </Link>
+            </p>
 
           </div>
         )}
