@@ -24,7 +24,7 @@ main {
 }
 
 button {
-  background-color: #3F1263; /* Blue */
+  background-color: #3F1263; 
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -38,5 +38,5 @@ button.logout-btn{
 }
 
 button:hover {
-  background-color: #986EAD; /* Darker Blue */
+  background-color: #986EAD; 
 }
