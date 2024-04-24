@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import SearchBar from "../search/page";
 import NavigationBar from "../navBar/page";
+import Link from 'next/link';
 import './Login.css';
 
 const Login = ({ onLogin, onCreateAccount }) => {
@@ -44,10 +45,14 @@ const Login = ({ onLogin, onCreateAccount }) => {
               <label>Password:</label>
               <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
             </div>
-            <button onClick={handleLogin}>Login</button>
+            <Link href='/components/playlist'>
+              <button onClick={handleLogin}>Login</button>
+           </Link>
             <div>
               <p>Don't have an account?</p>
+              <Link href='/components/playlist'>
               <button onClick={onCreateAccount}>Create Account</button>
+              </Link>
             </div>
           </div>
         )}
