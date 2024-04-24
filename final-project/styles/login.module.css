@@ -9,11 +9,6 @@ body {
   padding: 0;
 } */
 
-
-.header {
-  background-color: #121212;
-  margin-bottom: 0px;
-}
 /* Container */
 .loginContainer {
   display: flex;

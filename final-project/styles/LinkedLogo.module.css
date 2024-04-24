@@ -1,0 +1,11 @@
+.header {
+    background-color: #121212;
+    margin-bottom: 0px;
+  }
+  .logo {
+    width: 35px;
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-bottom: 7px;
+  }

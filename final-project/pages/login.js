@@ -4,6 +4,7 @@ import Link from 'next/link';
 import styles from '../styles/login.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import LinkedLogo from "../comps/LinkedLogo";
 
 const Login = ({ onLogin = username => console.log('Default login attempt:', username), onCreateAccount }) => {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -32,11 +33,14 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
       setShowPassword(!showPassword);
     };
 
+    const handleGoToHome = () => {
+      // Redirect to the index page (home)
+      router.push('/');
+    };
   return (
     <>
-      <header className={styles.header}>
-      <img src="Images/logo2.png" alt="Company Logo" className="logo" />
-      </header>
+      <LinkedLogo />
+
       <div className={styles.loginContainer}>
         {loggedInUser ? (
           <div className={styles.card}>

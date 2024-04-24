@@ -2,8 +2,9 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import axios from 'axios'; // Import Axios
+import LinkedLogo from "../comps/LinkedLogo";
 
-import styles from '../styles/login.module.css';
+import styles from '../styles/createAccount.module.css';
 
 const CreateAccount = ({ onLogin }) => {
   const [email, setEmail] = useState('');
@@ -32,19 +33,10 @@ const CreateAccount = ({ onLogin }) => {
     }
   };
 
-  const handleGoToHome = () => {
-    // Redirect to the index page (home)
-    router.push('/');
-  };
-
   return (
-    <div className={styles.loginContainer}>
-      <header>
-        <div className={styles.header}>
-          <h2>Sign Up to start <br /> creating</h2>
-          <button className={styles.homeButton} onClick={handleGoToHome}>Home</button>
-        </div>
-      </header>
+    <>
+    <LinkedLogo />
+    <div className={styles.createAccountContainer}>
       <div>
         <label className={styles.label}>Email:</label>
         <input 
@@ -70,7 +62,9 @@ const CreateAccount = ({ onLogin }) => {
         <button className={styles.loginButton} onClick={handleCreateAccount}>Create Account</button>
       </div>
     </div>
+    </>
   );
 };
+
 
 export default CreateAccount;
