@@ -42,7 +42,7 @@ const CreateAccount = ({ onLogin }) => {
     <div className={styles.loginContainer}>
       <header>
         <div className={styles.header}>
-          <h2>Create Account</h2>
+          <h2>Sign Up to start <br /> creating</h2>
           <button className={styles.homeButton} onClick={handleGoToHome}>Home</button>
         </div>
       </header>
