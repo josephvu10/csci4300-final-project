@@ -8,17 +8,17 @@ const Item = require("../../models/Item");
 
 userRouter.post("/signup", async (req, res) => {
     try {
-        const { email, password, confirmPassword, username } = req.body;
-        if (!email || !password || !username || !confirmPassword) {
+        const { email, password, confirmPassword } = req.body; // Remove username
+        if (!email || !password || !confirmPassword) {
             return res.status(400).json({ msg: "Please enter all the fields" });
         }
         if (password.length < 6) {
             return res
             .status(400)
-            .json({ msg: "Password should be atleast 6 characters" });
+            .json({ msg: "Password should be at least 6 characters" });
         }
-        if (confirmePassword !== password) {
-            return res.status(400).json({ msg: "Both the passwords don't match" });
+        if (confirmPassword !== password) {
+            return res.status(400).json({ msg: "Both passwords don't match" });
         }
         const existingUser = await User.findOne({ email });
         if (existingUser) {
@@ -27,7 +27,7 @@ userRouter.post("/signup", async (req, res) => {
             .json({ msg: "User with the same email already exists" });
         }
         const hashedPassword = await bcryptjs.hash(password, 8);
-        const newUser = new User ({ email, password: hashedPassword, username });
+        const newUser = new User ({ email, password: hashedPassword }); // Remove username
 
         const savedUser = await newUser.save();
         console.log(savedUser.username);
@@ -37,6 +37,7 @@ userRouter.post("/signup", async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
+
 
 userRouter.post("/login", async (req, res) => {
     try {
