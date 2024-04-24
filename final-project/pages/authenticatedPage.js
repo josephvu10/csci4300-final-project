@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { useDispatch } from 'react-redux'; // Import useDispatch for Redux
 import NavBar from '../comps/NavBar';
 import SearchBar from '../comps/SearchBar';
 import styles from '../styles/Home.module.css';
@@ -8,6 +9,7 @@ const AuthenticatedPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const images = ['s1.jpg', 's2.jpg', 's3.jpg'];
   const router = useRouter();
+  const dispatch = useDispatch(); // Initialize useDispatch for Redux
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,9 +20,11 @@ const AuthenticatedPage = () => {
   }, []);
 
   const handleLogout = () => {
-    // Implement your logout logic here
-    // For example, clear local storage, reset state, etc.
-    router.push('/'); // Redirect to the index page after logout
+    // Clear authentication state (example for Redux)
+    dispatch({ type: 'LOGOUT' }); // Dispatch an action to clear authentication state
+    
+    // Redirect to home page
+    router.push('/');
   };
 
   return (

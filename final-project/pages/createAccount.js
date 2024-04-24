@@ -1,4 +1,3 @@
-'use client'
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import axios from 'axios'; // Import Axios
@@ -19,7 +18,7 @@ const CreateAccount = ({ onLogin }) => {
   const handleCreateAccount = () => {
     if (email.trim() !== '' && password.trim() !== '' && password === confirmPassword) {
       // Make a POST request to the backend API endpoint
-      axios.post('/api/create-account', { email, password })
+      axios.post('/api/signup', { email, password}) // Remove username from request payload
         .then(response => {
           const userData = response.data;
           onLogin(userData.username);
