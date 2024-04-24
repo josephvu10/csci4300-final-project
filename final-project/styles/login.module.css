@@ -14,19 +14,17 @@ body {
   margin-bottom: 40px;
 }
 /* Container */
-.login-container {
-  width: 300px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #ffffff; /* White */
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Light shadow */
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Header */
-.login-container h2 {
+.loginContainer h2 {
   margin-top: 0;
-  color: #333333; /* Dark gray */
+  color: whitesmoke;
+  size: 15px; 
 }
 
 /* Input fields */
@@ -71,12 +69,11 @@ body {
 /* Create Account button */
 .loginContainer p {
   margin-bottom: 10px;
+  color: whitesmoke;
 }
-
 .loginContainer button.create-account-btn {
   background-color: #8F69B5; 
 }
-
 .loginContainer button.create-account-btn:hover {
   background-color: #8F69B5;
 }
@@ -105,7 +102,6 @@ body {
   margin: 0 auto; /* Center the box horizontally */
   margin-top: 40px;
 }
-
 .loginForm label {
   display: block; /* Display labels as block elements */
   margin-bottom: 10px; /* Add some space below each label */
@@ -115,12 +111,10 @@ body {
   width: 100%; /* Make input fields take up the full width */
   margin-bottom: 15px; /* Add some space below each input field */
 }
-
 .loginForm p {
   margin-top: 15px; /* Add some space above the "Don't have an account?" text */
   margin-bottom: 10px; /* Add some space below the "Don't have an account?" text */
 }
-
 .loginForm button {
   margin-top: 15px; /* Add some space above the buttons */
 }
@@ -131,8 +125,6 @@ body {
   text-decoration: underline; /* Underline the link */
   color: whitesmoke; /* Set initial color */
 }
-
-/* Change color on hover */
 .loginContainer .signUpLink:hover {
   color: #8F69B5; /* Change color on hover */
 }
@@ -156,16 +148,6 @@ body {
 .loginButton {
   margin-top: 15px; 
   margin-bottom: 40px;
-}
-
-.signUpLink {
-  text-decoration: underline; 
-  color: whitesmoke;
-  cursor: pointer; 
-}
-
-.signUpLink:hover {
-  color: yellow; 
 }
 
 .divisionLine {

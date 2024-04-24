@@ -4,7 +4,7 @@ import styles from '../styles/login.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
-const Login = ({ onLogin }) => {
+const Login = ({ onLogin = username => console.log('Default login attempt:', username), onCreateAccount }) => {
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
