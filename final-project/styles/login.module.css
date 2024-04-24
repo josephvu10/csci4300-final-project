@@ -9,64 +9,78 @@ body {
   padding: 0;
 } */
 
+.header {
+  background-color: #020512;
+  margin-bottom: 40px;
+}
 /* Container */
-.login-container {
-  width: 300px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #ffffff; /* White */
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Light shadow */
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.loginContainer h2 {
+  color: white; 
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-size: 30px;
 }
 
-/* Header */
-.login-container h2 {
-  margin-top: 0;
-  color: #333333; /* Dark gray */
+.loginContainer p {
+  color: whitesmoke;
 }
 
 /* Input fields */
-.login-container label {
+.loginContainer label {
   display: block;
   margin-bottom: 5px;
-  color: #555555; /* Medium gray */
+  color: white; 
 }
 
-.login-container input[type="text"],
-.login-container input[type="password"] {
-  width: calc(100% - 10px);
-  padding: 8px;
+.loginContainer input[type="text"],
+.loginContainer input[type="password"] {
+  width: 250px;
+  padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #cccccc; /* Light gray border */
+  background-color: #020512;
+  border: 1px solid #cccccc; 
   border-radius: 4px;
+  color: white;
+}
+.loginContainer input[type="text"]:hover,
+.loginContainer input[type="password"]:hover {
+  border-color: #8F69B5; /* Change border color on hover */
 }
 
 /* Buttons */
-.login-container button {
-  width: 100%;
+.loginContainer button {
+  width: 275px;
   padding: 10px;
-  background-color: #3F1263;
-  color: #ffffff; /* White */
+  background-color: #7A51A4;
+  color: #ffffff; 
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  border-radius: 20px;
 }
 
-.login-container button:hover {
-  background-color: #986EAD;
+.loginContainer button:hover {
+  background-color: #8F69B5;
+  transform: scale(1.1);
 }
 
 /* Create Account button */
-.login-container p {
+.loginContainer p {
   margin-bottom: 10px;
 }
 
-.login-container button.create-account-btn {
-  background-color: #3F1263; 
+.loginContainer button.create-account-btn {
+  background-color: #8F69B5; 
 }
 
-.login-container button.create-account-btn:hover {
-  background-color: #986EAD;
+.loginContainer button.create-account-btn:hover {
+  background-color: #8F69B5;
 }
 
 /* Logout button */
@@ -82,4 +96,69 @@ body {
 
 .logout-btn:hover {
   background-color: #986EAD; /* Darker red */
+}
+
+/* Add a style for the sign-up link */
+.loginContainer .signUpLink {
+  text-decoration: underline; /* Underline the link */
+  color: whitesmoke; /* Set initial color */
+}
+
+/* Change color on hover */
+.loginContainer .signUpLink:hover {
+  color: #8F69B5; /* Change color on hover */
+}
+
+.card {
+  background-color: #020512; 
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  margin-top: 20px;
+}
+.inputContainer {
+  margin-bottom: 20px; /* Add margin between input containers */
+}
+
+.loginButton {
+  margin-top: 15px; 
+  margin-bottom: 40px;
+}
+
+.signUpLink {
+  text-decoration: underline; 
+  color: whitesmoke;
+  cursor: pointer; 
+}
+
+.signUpLink:hover {
+  color: yellow; 
+}
+
+.divisionLine {
+  width: 80%; 
+  margin-top: 10px; 
+  margin-bottom: 40px; 
+  border-color: rgb(140, 140, 140);
+}
+/* Visability toggle */
+.passwordInputWrapper {
+  position: relative;
+}
+
+.togglePassword {
+  position: absolute;
+  top: 35%;
+  right: 10px; /* Adjust as needed */
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #ccc;
+}
+.togglePassword:hover {
+  color: #8F69B5; 
 }
