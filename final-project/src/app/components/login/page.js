@@ -3,7 +3,6 @@ import Link from "next/link";
 import styles from "./login.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import linkedLogo from "../LinkedLogo/page";
 import { useState, useContext } from 'react';
 
 //Stephens code
@@ -20,14 +19,11 @@ const Login = // () => {
   onCreateAccount,
 }) => {
 
-
-
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
   const [error, setError] = useState(null); // State to store error message
-
 
   const handleLogin = async () => {
     try {
@@ -98,10 +94,18 @@ const Login = // () => {
 
   */
 
+  const handleGoToHome = () => {
+    // Redirect to the index page (home)
+    router.push('/');
+  };
+  
   return (
     <> 
-    
-    <LinkedLogo />
+        <header className={styles.header}>
+      <a href="/" className={styles.homeLink} onClick={handleGoToHome}>
+  <img src="/Images/logo2.png" alt="Company logo" className={styles.logo} />
+  </a>
+      </header>
 
       <div className={styles.loginContainer}>
         {loggedInUser ? (

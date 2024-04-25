@@ -1,15 +1,14 @@
-/* Login.css */
-
-
-/* Body */
-/*
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0; // Light gray
-  margin: 0;
-  padding: 0;
-} */
-
+.header {
+  background-color: #121212;
+  margin-bottom: 0px;
+}
+.logo {
+  width: 35px;
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 50px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
 
 /* Container */
 .loginContainer {

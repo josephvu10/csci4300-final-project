@@ -18,4 +18,4 @@ const linkedLogo = () => {
 };
 
 
-export { linkedLogo };
+export default linkedLogo;
