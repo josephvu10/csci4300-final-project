@@ -44,10 +44,19 @@ const CreateAccount = ({ onLogin }) => {
     setShowPassword(!showPassword);
   };
 
+  const handleGoToHome = () => {
+    // Redirect to the index page (home)
+    router.push('/');
+  };
 
   return (
     <>
-    <LinkedLogo />
+    <header className={styles.header}>
+      <a href="/" className={styles.homeLink} onClick={handleGoToHome}>
+  <img src="/Images/logo2.png" alt="Company logo" className={styles.logo} />
+  </a>
+      </header>
+      
     <div className={styles.createAccountContainer}>
     <h2> Sign up to start <br /> creating </h2>
     <hr className={styles.divisionLine} />
