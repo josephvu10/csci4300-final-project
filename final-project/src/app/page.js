@@ -20,6 +20,7 @@ export default function Home() {
     'cover16.png', 'cover17.png', 'cover18.png',
   ]; 
 
+
   useEffect(() => {
     // Change displayed images initially
     changeDisplayedImages();
@@ -90,7 +91,9 @@ export default function Home() {
         ))}
       </div>
 
-
+      <Link href='/components/createAccount'>
+            <button className={styles.mixButton}>Start mixing your playlist</button>
+          </Link>
       
   </div>
 

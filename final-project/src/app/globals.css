@@ -27,7 +27,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Barlow Condensed", sans-serif;
   margin: 0;
   padding: 0;
   background-color: #141414; 
@@ -52,7 +52,6 @@ main {
 }
 
 button {
-  background-color: #3F1263; 
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -63,8 +62,4 @@ button {
 
 button.logout-btn{
   float: right;
-}
-
-button:hover {
-  background-color: #986EAD; 
 }
