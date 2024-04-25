@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700;800&display=swap');
 .header {
   background-color: #121212;
   margin-bottom: 0px;
@@ -35,19 +36,22 @@
 .loginContainer h2 {
   margin-top: 10px;
   color: #FCFCFC;
-  font-size: 35px;
+  font-size: 45px;
   margin-bottom: 35px;
+  font-family: "Barlow Condensed", sans-serif;
 }
 .loginContainer p {
   margin-bottom: 25px;
   color: #FCFCFC;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 20px;
 }
 .loginContainer .signUpLink {
   text-decoration: underline; /* Underline the link */
   color: #FCFCFC;
 }
 .loginContainer .signUpLink:hover {
-  color: #8F69B5;
+  color: #BF5F46;
   cursor: pointer;
 }
 
@@ -73,39 +77,41 @@
 }
 .loginContainer input[type="text"]:hover,
 .loginContainer input[type="password"]:hover {
-  border-color: #8F69B5; /* Change border color on hover */
+  border-color: #BF5F46; /* Change border color on hover */
 }
 
 
 /* Buttons */
 .loginContainer button {
   width: 275px;
-  padding: 12px;
-  background-color: #7A51A4;
+  padding: 8px;
+  background-color: #BF5F46;
   color: #FCFCFC;
   border: none;
   cursor: pointer;
   border-radius: 20px;
 }
 .loginContainer button:hover {
-  background-color: #8F69B5;
+  background-color: #CB7B67;
   transform: scale(1.1);
 }
 .loginButton {
   margin-top: 15px;
   margin-bottom: 40px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 18px;
 }
 /* Logout button */
 .logout-btn {
   padding: 10px;
-  background-color: #7A51A4;
+  background-color: #BF5F46;
   color: #FCFCFC;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 .logout-btn:hover {
-  background-color: #8F69B5;
+  background-color: #CB7B67;
   transform: scale(1.1);
 }
 
@@ -134,5 +140,5 @@
   color: #ccc;
 }
 .togglePassword:hover {
-  color: #8F69B5;
+  color: #BF5F46;
 }

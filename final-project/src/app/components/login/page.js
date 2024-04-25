@@ -122,10 +122,10 @@ const Login = // () => {
             {error && <p className={styles.error}>{error}</p>}{" "}
             {/* Display error message */}
             <div className={styles.inputContainer}>
-              <label className={styles.label}>Username</label>
+              <label className={styles.label}>Email</label>
               <input
                 type="text"
-                placeholder="Username"
+                placeholder="name@domain.com"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className={styles.inputField}
