@@ -10,7 +10,7 @@ const NavBar = () => {
       </div>
     <ul className="navList">
     <li className="navItem">
-          <Link href='/components/login'>
+          <Link href='/components/createAccount'>
             <button className="navButton">Create Account</button>
           </Link>
     </li>

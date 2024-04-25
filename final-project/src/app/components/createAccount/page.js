@@ -9,7 +9,6 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './createAccount.module.css';
 
-
 const CreateAccount = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -97,10 +96,12 @@ const CreateAccount = ({ onLogin }) => {
                   <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
                 </div>
               </div>
+        <Link href='/components/song'> 
         <button className={styles.loginButton} onClick={handleCreateAccount}>Create Account</button>
+        </Link> 
         <hr className={styles.divisionLine} />
         <p>Already have an account?
-  <Link href="/login">
+        <Link href='/components/login'> 
     <span className={styles.loginLink}> Log in here</span>
   </Link>
 </p>

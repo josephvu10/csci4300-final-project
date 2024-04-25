@@ -149,9 +149,11 @@ const Login = // () => {
                 </div>
               </div>
             </div>
+            <Link href='/components/song'> 
             <button className={styles.loginButton} onClick={handleLogin}>
               Log In
             </button>
+            </Link>
             <hr className={styles.divisionLine} />
             <p>
               Don't have an account?
