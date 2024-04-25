@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import Link from "next/link";
 import styles from "./login.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -155,7 +155,7 @@ const Login = // () => {
             <hr className={styles.divisionLine} />
             <p>
               Don't have an account?
-              <Link href="/createAccount">
+              <Link href='/components/createAccount'> 
                 <span className={styles.signUpLink}>
                   {" "}
                   Sign up for SoundPalette

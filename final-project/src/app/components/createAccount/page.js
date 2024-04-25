@@ -1,4 +1,5 @@
-import { useRouter } from 'next/router';
+'use client';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import axios from 'axios'; // Import Axios
 import LinkedLogo from "../LinkedLogo/page";
