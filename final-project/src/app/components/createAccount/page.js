@@ -1,13 +1,12 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import axios from 'axios'; // Import Axios
-import LinkedLogo from "../comps/LinkedLogo";
+import LinkedLogo from "../LinkedLogo/page";
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
-
-import styles from '../styles/createAccount.module.css';
+import styles from './createAccount.module.css';
 
 
 const CreateAccount = ({ onLogin }) => {
