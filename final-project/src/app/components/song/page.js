@@ -5,7 +5,7 @@ import SearchBar from "../search/page";
 import React, { useState } from'react';
 import SongList from '../SongList'
 import AddSong from '../AddSong'
-import Hdr from '../Hdr'
+//import Hdr from '../Hdr'
 import { useRouter } from 'next/router';
 
 const Song = () => { 
