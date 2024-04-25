@@ -6,6 +6,7 @@ import React, { useState } from'react';
 import SongList from '../SongList'
 import AddSong from '../AddSong'
 import Hdr from '../Hdr'
+import { useRouter } from 'next/router';
 
 const Song = () => { 
 
@@ -20,24 +21,33 @@ const Song = () => {
     });
   };
 
-    return ( 
-        <div>
-            <div className="songs-container">
-                <div className="song-header"> 
-                    <header className="song-header">
-                        <h1>SoundPalette</h1>
-                        <button className='login-button'>Login</button>
-                    </header>
-                </div>
-                <div className="song-card">
-                    <SearchBar /> 
-                        <Hdr />
-                        <AddSong onAddSong={addSongHandler} />
-                        <SongList songs={songs} />
-                </div>
-            </div>
-        </div>
-    );
+  const handleGoToHome = () => {
+    // Redirect to the index page (home)
+    const router = useRouter();
+    router.push('/');
+  };
+
+  return ( 
+    <>
+    <header className="header">
+      <a href="/" className="homeLink" onClick={handleGoToHome}>
+        <img src="/Images/logo2.png" alt="Company logo" className="logo" />
+      </a>
+      <a href="/" className="logoutBtn" onClick={handleGoToHome}>Logout</a>
+    </header>
+
+    <div className="hdr">
+     <h1>Your Playlist</h1>
+    </div>
+    
+    <div className="songs-container">
+      <div className="song-card">
+        <AddSong onAddSong={addSongHandler} />
+        <SongList songs={songs} />
+      </div>
+    </div>
+  </>
+);
 };
 
 export default Song;

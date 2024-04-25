@@ -26,6 +26,7 @@ const addSong = (props) => {
         <input
           id="title"
           type="text"
+          placeholder="Title"
           value={enteredTitle}
           onChange={(event) => setEnteredTitle(event.target.value)}
         />
@@ -34,11 +35,12 @@ const addSong = (props) => {
         <input
           id="artist"
           type="text"
+          placeholder="Artist"
           value={enteredArtist}
           onChange={(event) => setEnteredArtist(event.target.value)}
         />
 
-        <button type="submit">Add Song</button>
+        <button type="submit" className="addSongBtn">Add Song</button>
       </form>
     </Card>
   );
