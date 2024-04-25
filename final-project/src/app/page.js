@@ -28,7 +28,7 @@ export default function Home() {
     // Set interval to change displayed images every 3 seconds
     const interval = setInterval(() => {
       changeDisplayedImages();
-    }, 5000);
+    }, 3000);
 
     // Clear interval on component unmount
     return () => clearInterval(interval);
@@ -70,7 +70,7 @@ export default function Home() {
       <div className={styles.welcomeTextContainer}> 
         <div className={styles.welcomeText}>
           <h1> Welcome to <br /> SoundPalette </h1>
-          <p> Where playlists paint your mood </p>
+          <h2> Where playlists paint your mood </h2>
         </div>
       </div>
       <div className={styles.overlay}></div>

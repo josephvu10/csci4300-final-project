@@ -10,6 +10,9 @@
   background-color: transparent;
   color: white; 
   border: 2px solid white;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 18px;
+  margin-top: 8px;
 }
 .navButton:hover {
   background-color: transparent;
@@ -19,7 +22,7 @@
 
 .navBar {
   position: absolute;
-  top: 20px; /* Adjust top positioning */
+  top: 1px; /* Adjust top positioning */
   right: 20px; /* Adjust right positioning */
   z-index: 2; /* Ensure buttons are above the overlay */
 }
@@ -39,22 +42,23 @@
 }
 .welcomeTextContainer {
   position: absolute;
-  top: 60px;
+  top: 130px;
   padding: 0px;
   z-index: 2;
 }
 .welcomeText {
   text-align: left;
-  color: whitesmoke;  
+  color: #FCFCFC;  
   font-family: "Barlow Condensed", sans-serif;
   margin-left: 50px;
+  line-height: .85;
 }
 .welcomeText h1 {
-  font-size: 100px; 
+  font-size: 120px; 
   margin-bottom: 10px;
 }
-.welcomeText p {
-  font-size: 35px; 
+.welcomeText h2 {
+  font-size: 30px; 
 }
 .welcomeBanner img {
   width: 100%;
@@ -78,8 +82,10 @@
 .hpContainer p {
   color: #fcfcfc;
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
   margin-bottom: 50px;
+  font-family: "Barlow Condensed", sans-serif;
+  margin-top: 0px;
 }
 
 .gridContainer {
@@ -105,15 +111,15 @@
   margin-bottom: 50px;
   background-color:#4E6A50;
   display: block; 
-  padding: 15px;
+  padding: 12px;
   margin-left: auto; 
   margin-right: auto; 
   color: #FCFCFC;
-  border: none;
-  border-radius: 40px;
+  border-radius: 20px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 22px;
   text-decoration: none;
+  font-family: "Barlow Condensed", sans-serif;
 }
 .mixButton:hover {
   transform: scale(1.1);
