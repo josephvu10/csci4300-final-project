@@ -4,7 +4,12 @@ body{
     padding: 0;
     background-color: #121212;
 }
-
+.searchContainer {
+    display: flex;
+    justify-content: right;
+    justify-content: space-between; 
+    margin-right: 0px;
+  }
 .header {
     background-color: #292929;
     margin-bottom: 0px;
@@ -37,22 +42,67 @@ body{
 }
 .addSongBtn {
     background-color: transparent;
+    border: 1px solid whitesmoke;
+}
+.addSongBtn:hover {
+    border: 1px solid pink;
+    color: pink;
 }
 
 .song-card {
     margin-left: 20px;
     margin-right: 20px;
+    background-color: #121212;
 }
 
 .hdr {
-    text-align: center;
     padding: 40px 0 30px 0;
     background-color: #292929;
+    display: flex;
 
 }
 .hdr h1 {
     margin: 0 auto;
     color: white;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 70px;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 135px;
+}
+
+.searchSongs label {
+    color: #fff; 
+    font-size: 20px;
+  }
+  .searchSongs input[type="text"] {
+    width: 200px; /* Set the width of the text fields */
+    height: 30px; /* Set the height of the text fields */
+  }
+.searchSongs input {
+    color: white; 
+    border-color: whitesmoke;
+    border-radius: 5px;
+    background-color: #121212 
+  }
+  .searchSongs input:hover {
+    border-color: pink;
+  }
+  .searchSongs label,
+.searchSongs input,
+.searchSongs button {
+  margin-right: 20px; /* Add margin between elements */
 }
 
 
+.squareImage {
+    width: 200px; 
+    height: 200px; 
+    margin-left: 66px;
+  }
+
+  .searchSongs {
+    background-color: #121212; 
+    padding: 0px; 
+    margin-left: 60px;
+  }
