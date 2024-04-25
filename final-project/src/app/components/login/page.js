@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styles from './login.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-//import LinkedLogo from "./LinkedLogo";
+//import LinkedLogo from "./linkedLogo";
 import axios from 'axios'; // Import Axios
 
 
