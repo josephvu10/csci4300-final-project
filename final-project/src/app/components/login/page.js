@@ -1,64 +1,99 @@
 'use client'
 import React, { useState } from 'react';
-import SearchBar from "../search/page";
-import NavigationBar from "../navBar/page";
 import Link from 'next/link';
-import './Login.css';
+import styles from './login.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+//import LinkedLogo from "./LinkedLogo";
+import axios from 'axios'; // Import Axios
 
-const Login = ({ onLogin, onCreateAccount }) => {
+
+const Login = ({ onLogin = username => console.log('Default login attempt:', username), onCreateAccount }) => {
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+  const [error, setError] = useState(null); // State to store error message
 
-  const handleLogin = () => {
-    if (username.trim() !== '') {
-      onLogin(username);
-      setLoggedInUser(username);
-    } else {
-      alert('Please enter a username.');
+
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('/api/login', { username, password });
+      const { data } = response;
+      onLogin(data.username); // Pass the username to the parent component or update global state
+      // router.push('/authenticated'); // Redirect to authenticated page
+      setLoggedInUser(data.username); // Update loggedInUser state instead of redirecting
+    } catch (error) {
+      setError('Invalid username or password.');
     }
   };
+
 
   const handleLogout = () => {
     setLoggedInUser(null);
   };
 
+
+  // Function to toggle password visibility
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+
   return (
-    <div>
-      <header>
-        <h1>Sound Palette</h1>
-        {loggedInUser && (
-          <button className="logout-btn" onClick={handleLogout}>Logout</button>
-        )}
-      </header>
-      <main>
+    <>
+
+      <div className={styles.loginContainer}>
         {loggedInUser ? (
-          <p>Welcome, {loggedInUser}!</p>
+          <div className={styles.card}>
+            <p>Welcome, {loggedInUser}!</p>
+            <button className={styles.logoutBtn} onClick={handleLogout}>Logout</button>
+          </div>
         ) : (
-          <div>
-            <h2>Login</h2>
-            <div>
-              <label>Username:</label>
-              <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+          <div className={styles.card}>
+            <h2> Log in to SoundPalette </h2>
+            <hr className={styles.divisionLine} />
+            {error && <p className={styles.error}>{error}</p>} {/* Display error message */}
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>Username</label>
+              <input
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className={styles.inputField}
+              />
             </div>
-            <div>
-              <label>Password:</label>
-              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>Password</label>
+              <div className={styles.passwordInputWrapper}>
+                <input
+                  type={showPassword ? "text" : "password"} // Toggle between text and password type
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className={styles.inputField}
+                />
+                <div className={styles.togglePassword} onClick={togglePasswordVisibility}>
+                  <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
+                </div>
+              </div>
             </div>
-            <Link href='/components/playlist'>
-              <button onClick={handleLogin}>Login</button>
-           </Link>
-            <div>
-              <p>Don't have an account?</p>
-              <Link href='/components/playlist'>
-              <button onClick={onCreateAccount}>Create Account</button>
-              </Link>
-            </div>
+            <button className={styles.loginButton} onClick={handleLogin}>Log In</button>
+            <hr className={styles.divisionLine} />
+            <p>Don't have an account?
+  <Link href="/createAccount">
+    <span className={styles.signUpLink}> Sign up for SoundPalette</span>
+  </Link>
+</p>
+
+
           </div>
         )}
-      </main>
-    </div>
+      </div>
+    </>
   );
 };
+
 
 export default Login;
