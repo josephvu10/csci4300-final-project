@@ -18,24 +18,28 @@
   }
  
   .createAccountContainer h2 {
-    margin-top: 25px;
+    margin-top: 0px;
     color: #FCFCFC;
     font-size: 50px;
+    font-family: "Barlow Condensed", sans-serif;
+  font-size: 70px;
+  margin-bottom: 0px;
   }
   .createAccountContainer p {
-    margin-top: 0;
+    margin-top: -10px;
     margin-bottom: 100px;
     color: #FCFCFC;
+    font-family: "Barlow Condensed", sans-serif;
+  font-size: 20px;
   }
   .createAccountContainer .loginLink {
     text-decoration: underline; /* Underline the link */
     color: #FCFCFC;
   }
   .createAccountContainer .loginLink:hover {
-    color: #8F69B5;
+    color: #4AAFBF;
     cursor: pointer;
   }
-
 
   .createAccountContainer label {
     display: block;
@@ -44,8 +48,6 @@
     color: #FCFCFC;
     text-align: left;
   }
-
-
 
 
 .createAccountContainer input[type="text"],
@@ -63,14 +65,14 @@
 .createAccountContainer input[type="text"]:hover,
 .createAccountContainer input[type="password"]:hover,
 .createAccountContainer input[type="email"]:hover {
-  border-color: #8F69B5; /* Change border color on hover */
+  border-color: #4AAFBF; /* Change border color on hover */
 }
 
 
 .createAccountContainer button {
     width: 375px;
-    padding: 15px;
-    background-color: #7A51A4;
+    padding: 10px;
+    background-color: #4AAFBF;
     color: #FCFCFC;
     border: none;
     border-radius: 4px;
@@ -78,12 +80,14 @@
     border-radius: 20px;
   }
   .createAccountContainer button:hover {
-    background-color: #8F69B5;
+    background-color: #68BDCA;
     transform: scale(1.1);
   }
   .loginButton {
     margin-top: 15px;
     margin-bottom: 40px;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 20px;
   }
 
 
@@ -100,9 +104,8 @@
     color: #ccc;
   }
   .togglePassword:hover {
-    color: #8F69B5;
+    color: #4AAFBF;
   }
-
 
   .divisionLine {
     width: 30%;
