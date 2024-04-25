@@ -6,8 +6,9 @@ body{
 }
 .searchContainer {
     display: flex;
-    justify-content: flex-end;
-    margin-right: -700px;
+    justify-content: right;
+    justify-content: space-between; 
+    margin-right: 0px;
   }
 .header {
     background-color: #292929;
@@ -67,7 +68,7 @@ body{
     font-size: 70px;
     text-align: left;
     margin-left: 20px;
-    margin-top: 136px;
+    margin-top: 135px;
 }
 
 .searchSongs label {
