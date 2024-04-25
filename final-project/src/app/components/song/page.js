@@ -5,7 +5,6 @@ import SearchBar from "../search/page";
 import React, { useState } from'react';
 import SongList from '../SongList'
 import AddSong from '../AddSong'
-import Hdr from '../Hdr'
 import { useRouter } from 'next/router';
 
 const Song = () => { 
@@ -37,9 +36,14 @@ const Song = () => {
     </header>
 
     <div className="hdr">
-     <h1>Your Playlist</h1>
+    <img src="/Images/songBanner.gif" alt="Square Image" className="squareImage" />
+    <h1>Your Playlist</h1>
     </div>
-    
+
+    <div className="searchContainer">
+  <SearchBar />
+</div>
+
     <div className="songs-container">
       <div className="song-card">
         <AddSong onAddSong={addSongHandler} />

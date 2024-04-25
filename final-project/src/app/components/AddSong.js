@@ -20,7 +20,7 @@ const addSong = (props) => {
   };
 
   return (
-    <Card className="input">
+    <Card className="searchSongs" >
       <form onSubmit={addSongHandler}>
         <label>Title</label>
         <input

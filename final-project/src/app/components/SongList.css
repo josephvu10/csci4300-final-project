@@ -4,13 +4,12 @@
     max-width: 40rem;
   }
   
-  .songs ul {
+  .songs ul li {
     list-style: none;
     padding: 1rem;
+    color: #ccc;
+    margin-left: -250px;
+    font-size: 15px;
   }
   
-  .song li {
-    border: 1px solid #ccc;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-  }
+  
