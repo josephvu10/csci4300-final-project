@@ -4,7 +4,8 @@ const userRouter = express.Router();
 const jwt = require("jsonwebtoken");
 const auth = require("../../middleware/auth");
 const User = require('../../models/User');
-const Item = require("../../models/Item");
+
+module.exports = userRouter;
 
 userRouter.post("/signup", async (req, res) => {
     try {
@@ -17,7 +18,7 @@ userRouter.post("/signup", async (req, res) => {
             .status(400)
             .json({ msg: "Password should be atleast 6 characters" });
         }
-        if (confirmePassword !== password) {
+        if (confirmPassword !== password) {
             return res.status(400).json({ msg: "Both the passwords don't match" });
         }
         const existingUser = await User.findOne({ email });
@@ -81,7 +82,7 @@ userRouter.post("/tokenIsValid", async (req, res) => {
     }
 });
 
-router.delete('/:id', auth, (req, res) => {
+userRouter.delete('/:id', auth, (req, res) => {
     Item.findByIdAndRemove(req.params.id, req.body)
         .then((item) => res.json({ msg: 'Item entry deleted successfully' }))
         .catch((err) => res.status(404).json({ error: 'No such a item' }));
