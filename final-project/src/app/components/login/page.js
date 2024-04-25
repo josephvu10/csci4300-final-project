@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styles from './login.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-//import LinkedLogo from "./linkedLogo";
+import linkedLogo from "../LinkedLogo/page";
 import axios from 'axios'; // Import Axios
 
 
@@ -28,20 +28,19 @@ const Login = ({ onLogin = username => console.log('Default login attempt:', use
     }
   };
 
-
   const handleLogout = () => {
     setLoggedInUser(null);
   };
-
 
   // Function to toggle password visibility
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-
   return (
-    <>
+    <> 
+    
+    <LinkedLogo />
 
       <div className={styles.loginContainer}>
         {loggedInUser ? (
