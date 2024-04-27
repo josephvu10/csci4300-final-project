@@ -15,6 +15,18 @@ const Song = () => {
     if (songData.title.trim() === '') {
       return;
     }
+
+    const deleteSongHandler = (songData) => {
+      const result = songData.id.filter ((__, i) => i !== songData.id); 
+      setSongs(result); 
+  };
+
+  const editSongHandler = (id) => {
+    const tempArr = song; 
+    const selected = tempArr.filter((song) => song.id === id); 
+    setSelectedItem(selected[0]); 
+};
+
     setSongs((prevSongs) => {
       return[...prevSongs, {id: Math.random().toString, ...songData}];
     });
