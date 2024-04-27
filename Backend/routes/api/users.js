@@ -75,20 +75,24 @@ userRouter.post("/login", bodyParser.json(), async (req, res) => {
 });
 
 // TO CHeck IF TOKEN IS VALID
-userRouter.post("/tokenCheck", async (req, res) => {
+userRouter.get("/tokenInfo", async (req, res) => {
   try {
     const tokenHeader = req.header("Authorization");
-    if (!tokenHeader) return res.json(false);
+    if (!tokenHeader) return res.json({valid: false});
 
-    const tokenSplit = tokenHeader.split("Bearer", 1)
-    if (tokenSplit.length === 1) return res.json(false)
+    const tokenSplit = tokenHeader.split(" ")
+    if (tokenSplit.length === 1) return res.json({valid: false})
 
     const verified = jwt.verify(tokenSplit[1], process.env.JWT_SECRET)
 
-    if (!verified) return res.json(false);
+    if (!verified) return res.json({valid: false});
     const user = await User.findById(verified);
-    if (!user) return res.json(false);
-    return res.json(true);
+    if (!user) return res.json({valid: false});
+
+    console.log(user)
+    delete user._id
+    delete user.__v
+    return res.json({valid: true, id: user._id, email: user.email, songs: user.songs});
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

@@ -4,6 +4,12 @@ import styles from "./login.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { useState, useContext } from 'react';
+import { useUserCtx } from "../../context/UserContext";
+
+import { API_URL } from "../../../constants";
+
+import axios from 'axios'
+import { useRouter } from "next/navigation";
 
 //Stephens code
 /*
@@ -13,32 +19,36 @@ import UserContext from '../../context/UserContext';
 import { useRouter } from 'next/navigation';
 
 */
-const Login = // () => {
-({
-  onLogin = (username) => console.log("Default login attempt:", username),
-  onCreateAccount,
-}) => {
+const Login =  () => {
 
+  const {setUserData} = useUserCtx();
+  const router = useRouter();
   const [loggedInUser, setLoggedInUser] = useState(null);
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
   const [error, setError] = useState(null); // State to store error message
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('/api/login', { username, password });
+      const response = await axios.post(`${API_URL}/api/users/login`, {  email, password });
       const { data } = response;
-      onLogin(data.username); // Pass the username to the parent component or update global state
+      setUserData(data)
+      router.push('/components/song')
       // router.push('/authenticated'); // Redirect to authenticated page
       setLoggedInUser(data.username); // Update loggedInUser state instead of redirecting
     } catch (error) {
+      console.error(error)
+
+      if (error.response) {
+        console.error(error.response.data);
+      }
       setError('Invalid username or password.');
     }
   };
 
   const handleLogout = () => {
-    setLoggedInUser(null);
+    setUserData(null);
   };
 
   // Function to toggle password visibility
@@ -126,8 +136,8 @@ const Login = // () => {
               <input
                 type="text"
                 placeholder="name@domain.com"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className={styles.inputField}
               />
             </div>
@@ -149,11 +159,11 @@ const Login = // () => {
                 </div>
               </div>
             </div>
-            <Link href='/components/song'> 
+            {/* <Link href='/components/song'>  */}
             <button className={styles.loginButton} onClick={handleLogin}>
               Log In
             </button>
-            </Link>
+            {/* </Link> */}
             <hr className={styles.divisionLine} />
             <p>
               Don't have an account?

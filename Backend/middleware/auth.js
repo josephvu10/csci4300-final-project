@@ -9,21 +9,22 @@ const auth = async (req, res, next) => {
         if (!tokenHeader)
           return res.status(401).json({ msg: "No token, access denied" });
         //Expecting "Bearer [token]"
-        const split = tokenHeader.split("Bearer ", 1);
+        const split = tokenHeader.split(" ");
+
         if (split.length === 1) 
           return res
             .status(401)
             .json({ msg: "No token after Bearer, access denied" });
 
         const token = split[1]
-        const verified = jwt.verify(token, process.env.JWT_SECRET); //user env var for JWT secret
-        if (!verified)
+        const idres = jwt.verify(token, process.env.JWT_SECRET); //user env var for JWT secret
+        if (!idres)
           return res
             .status(401)
             .json({ msg: "Token verification failed, authorization denied" });
             
         // since the token was made out of the document id
-        res.locals.userid = verified.id;
+        res.locals.userid = idres;
         next();
     }
     catch (err) {

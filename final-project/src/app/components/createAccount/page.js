@@ -9,7 +9,12 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './createAccount.module.css';
 
-const CreateAccount = ({ onLogin }) => {
+import { API_URL } from '../../../constants';
+import { useUserCtx } from '../../context/UserContext';
+
+const CreateAccount = () => {
+
+  const {setUserData} = useUserCtx();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -20,10 +25,12 @@ const CreateAccount = ({ onLogin }) => {
   const handleCreateAccount = () => {
     if (email.trim() !== '' && password.trim() !== '' && password === confirmPassword) {
       // Make a POST request to the backend API endpoint
-      axios.post('/api/signup', { email, password}) // Remove username from request payload
+      axios.post(`${API_URL}/api/users/signup`, { email, password, confirmPassword}) // Remove username from request payload
         .then(response => {
           const userData = response.data;
-          onLogin(userData.username);
+
+          setUserData(userData)
+          router.push('/components/song')
         })
         .catch(error => {
           console.error('Error creating account:', error);
@@ -96,9 +103,7 @@ const CreateAccount = ({ onLogin }) => {
                   <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
                 </div>
               </div>
-        <Link href='/components/song'> 
         <button className={styles.loginButton} onClick={handleCreateAccount}>Create Account</button>
-        </Link> 
         <hr className={styles.divisionLine} />
         <p>Already have an account?
         <Link href='/components/login'> 

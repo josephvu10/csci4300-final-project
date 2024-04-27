@@ -1,26 +1,30 @@
-'use client'
-import { useState } from 'react';
-import React from 'react';
-import Card from './Card';
-import Song from './song/page'; 
+"use client";
+import { useState } from "react";
+import React from "react";
+import Card from "./Card";
+import Song from "./song/page";
+import { API_URL } from "../../constants";
+
+import axios from 'axios'
+import { useUserCtx } from "../context/UserContext";
 
 const addSong = (props) => {
-  const [enteredTitle, setEnteredTitle] = useState('');
-  const [enteredArtist, setEnteredArtist] = useState('');
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredArtist, setEnteredArtist] = useState("");
 
   const addSongHandler = (event) => {
     event.preventDefault();
     props.onAddSong({
-      title: enteredTitle, 
-      artist: enteredArtist
+      title: enteredTitle,
+      artist: enteredArtist,
     });
 
-    setEnteredTitle('');
-    setEnteredArtist('');
+    setEnteredTitle("");
+    setEnteredArtist("");
   };
 
   return (
-    <Card className="searchSongs" >
+    <Card className="searchSongs">
       <form onSubmit={addSongHandler}>
         <label>Title</label>
         <input
@@ -40,7 +44,9 @@ const addSong = (props) => {
           onChange={(event) => setEnteredArtist(event.target.value)}
         />
 
-        <button type="submit" className="addSongBtn">Add Song</button>
+        <button type="submit" className="addSongBtn">
+          Add Song
+        </button>
       </form>
     </Card>
   );
