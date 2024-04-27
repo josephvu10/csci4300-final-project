@@ -6,6 +6,7 @@ import Card from './Card';
 import './SongList.css';
 
 const SongList = props => {
+
     return (
         <Card className="songs">
             <ul>
@@ -18,6 +19,7 @@ const SongList = props => {
                     />
                 ))}
             </ul>
+            
         </Card>
     );
 };
