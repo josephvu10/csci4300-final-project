@@ -1,4 +1,11 @@
 const express = require('express');
+const dotenv = require('dotenv')
+
+dotenv.config({
+    path: '.env.local'
+})
+
+
 const app = express();
 const port = process.env.PORT || 8086;
 const mongoose = require('mongoose');

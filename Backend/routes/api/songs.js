@@ -3,14 +3,19 @@ const router = express.Router();
 
 const bodyParser = require('body-parser'); 
 const Song = require('../../models/Song')
+const auth = require('../../middleware/auth');
+const User = require('../../models/User');
 
 module.exports = router;
 
-router.post('/', bodyParser.json(), (req,res) => {
+router.post('/', auth, bodyParser.json(), (req,res) => {
+    console.log(res.locals.userid)
     console.log(req.body); 
     Song.create(req.body)
     .then((song) => res.json({ msg: 'Song added successfuly'}))
     .catch((err) => res.status(400).json({ error: 'Unable to add this song'})); 
+
+
 }); 
 
 router.get(':/id', (req, res) => {

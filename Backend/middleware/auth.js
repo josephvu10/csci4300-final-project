@@ -1,17 +1,21 @@
 const jwt = require("jsonwebtoken");
 
+/**
+ * @type {import('express').RequestHandler}
+ */
 const auth = async (req, res, next) => {
     try {
-        const token = req.header("Authorization");
-        if (!token)
+        const tokenHeader = req.header("Authorization");
+        if (!tokenHeader)
           return res.status(401).json({ msg: "No token, access denied" });
         //Expecting "Bearer [token]"
-        const token2 = token.split(" ")[1];
-        if (!token2)
+        const split = tokenHeader.split("Bearer ", 1);
+        if (split.length === 1) 
           return res
             .status(401)
             .json({ msg: "No token after Bearer, access denied" });
 
+        const token = split[1]
         const verified = jwt.verify(token, process.env.JWT_SECRET); //user env var for JWT secret
         if (!verified)
           return res
@@ -19,7 +23,7 @@ const auth = async (req, res, next) => {
             .json({ msg: "Token verification failed, authorization denied" });
             
         // since the token was made out of the document id
-        req.user = verified.id;
+        res.locals.userid = verified.id;
         next();
     }
     catch (err) {

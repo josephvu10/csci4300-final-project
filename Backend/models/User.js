@@ -11,7 +11,14 @@ userSchema = new mongoose.Schema({
         required: true,
         type: String,
         minLength: 6
+    },
+    songs: {
+        required: true,
+        type: [String],
     }
 });
 
+/**
+ * @type {import('mongoose').Model}
+ */
 module.exports = User = mongoose.model('user', userSchema);
