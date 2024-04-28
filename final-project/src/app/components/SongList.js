@@ -5,19 +5,34 @@ import Song from './Song';
 import Card from './Card';
 import './SongList.css';
 
-const SongList = props => {
+const SongList = ({songs, onEditSong, onDeleteSong}) => {
 
     return (
         <Card className="songs">
             <ul>
-                {props.songs.map((song) => (
-                    <Song
-                    key={song.id}
+                {songs.map((song, idx) => {
+
+                    const oldDel = onDeleteSong
+                    const boundDel = (...args) => {
+                        oldDel(song, ...args)
+                    }
+
+                    const oldEdit = onEditSong
+                    const boundEdit = (...args) => {
+                        oldEdit(song, ...args)
+                    }
+
+                   return <Song
+                    key={idx}
                     id={song.id}
                     title={song.title}
                     artist={song.artist}
+                    image={song.image}
+                    link={song.link}
+                    onDelete={boundDel}
+                    onEdit={boundEdit}
                     />
-                ))}
+})}
             </ul>
             
         </Card>

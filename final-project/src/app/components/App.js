@@ -5,8 +5,9 @@ import { useState } from 'react';
 
 import Homepage from './components/Homepage';
 import Login from './components/Login';
-import CreateAccount from './createAccount';
+import CreateAccount from '../createAccount';
 import Playlistpage from './components/Playlistpage';
+import Editpage from '../editSong';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/createAccount' element={<CreateAccount />} />
         <Route path='/authenticatedPage' element={<AuthenticatedPage />} />
         <Route path='/playlistpage' element={<Playlistpage />} />
+        <Route path='/edit' element={<Editpage/>} />
       </Routes>
     </Router>
   );

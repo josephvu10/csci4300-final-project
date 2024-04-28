@@ -2,25 +2,26 @@
 import { useState } from "react";
 import React from "react";
 import Card from "./Card";
-import Song from "./song/page";
-import { API_URL } from "../../constants";
-
-import axios from 'axios'
-import { useUserCtx } from "../context/UserContext";
 
 const addSong = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredArtist, setEnteredArtist] = useState("");
+  const [enteredImage, setEnteredImage] = useState("");
+  const [enteredLink, setEnteredLink] = useState("");
 
   const addSongHandler = (event) => {
     event.preventDefault();
     props.onAddSong({
       title: enteredTitle,
       artist: enteredArtist,
+      image: enteredImage,
+      link: enteredLink
     });
 
     setEnteredTitle("");
     setEnteredArtist("");
+    setEnteredImage("");
+    setEnteredLink("");
   };
 
   return (
@@ -42,6 +43,24 @@ const addSong = (props) => {
           placeholder="Artist"
           value={enteredArtist}
           onChange={(event) => setEnteredArtist(event.target.value)}
+        />
+
+        <label>Image</label>
+        <input
+          id="image"
+          type="text"
+          placeholder="Image Link"
+          value={enteredImage}
+          onChange={(event) => setEnteredImage(event.target.value)}
+        />
+
+        <label>Link</label>
+        <input
+          id="link"
+          type="text"
+          placeholder="Song Link"
+          value={enteredLink}
+          onChange={(event) => setEnteredLink(event.target.value)}
         />
 
         <button type="submit" className="addSongBtn">

@@ -4,9 +4,9 @@ import styles from "./login.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { useState, useContext } from 'react';
-import { useUserCtx } from "../../context/UserContext";
+import { useUserCtx } from "../context/UserContext";
 
-import { API_URL } from "../../../constants";
+import { API_URL } from "../../constants";
 
 import axios from 'axios'
 import { useRouter } from "next/navigation";
@@ -34,7 +34,7 @@ const Login =  () => {
       const response = await axios.post(`${API_URL}/api/users/login`, {  email, password });
       const { data } = response;
       setUserData(data)
-      router.push('/components/song')
+      router.push('/playlist')
       // router.push('/authenticated'); // Redirect to authenticated page
       setLoggedInUser(data.username); // Update loggedInUser state instead of redirecting
     } catch (error) {
@@ -159,7 +159,7 @@ const Login =  () => {
                 </div>
               </div>
             </div>
-            {/* <Link href='/components/song'>  */}
+            {/* <Link href='/playlist'>  */}
             <button className={styles.loginButton} onClick={handleLogin}>
               Log In
             </button>

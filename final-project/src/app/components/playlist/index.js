@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import SearchBar from "../search/page";
+import SearchBar from "../search";
 import Link from 'next/link';
 import './Playlistpage.css';
 
@@ -14,7 +14,7 @@ const Playlistpage = () => {
       <h2 className="playlist-header">Playlist</h2>
       <SearchBar />
       <div className="grid-container">
-        <Link href='/components/song'> 
+        <Link href='/playlist'> 
             <button className="playlist1Button"> Playlist1 </button>
           </Link>
       </div>

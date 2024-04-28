@@ -2,15 +2,14 @@
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import axios from 'axios'; // Import Axios
-import LinkedLogo from "../LinkedLogo/page";
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './createAccount.module.css';
 
-import { API_URL } from '../../../constants';
-import { useUserCtx } from '../../context/UserContext';
+import { API_URL } from '../../constants';
+import { useUserCtx } from '../context/UserContext';
 
 const CreateAccount = () => {
 
@@ -30,7 +29,7 @@ const CreateAccount = () => {
           const userData = response.data;
 
           setUserData(userData)
-          router.push('/components/song')
+          router.push('/playlist')
         })
         .catch(error => {
           console.error('Error creating account:', error);
