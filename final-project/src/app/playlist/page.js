@@ -105,7 +105,7 @@ const Song = () => {
     <>
       <header className="header">
         <a href="/" className="homeLink" onClick={handleGoToHome}>
-          <img src="/Images/logo2.png" alt="Company logo" className="logo" />
+          <img src="Images/logo2.png" alt="Company logo" className="logo" />
         </a>
         <a href="/" className="logoutBtn" onClick={handleLogout}>
           Logout
@@ -114,7 +114,7 @@ const Song = () => {
 
       <div className="hdr">
         <img
-          src="/Images/songBanner.gif"
+          src="Images/songBanner.gif"
           alt="Square Image"
           className="squareImage"
         />

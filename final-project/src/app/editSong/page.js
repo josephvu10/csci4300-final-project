@@ -1,4 +1,5 @@
 "use client";
+import "./editSong.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import React from "react";
@@ -73,51 +74,64 @@ const Edit = ({ searchParams }) => {
   };
 
   return (
-    <div>
-      <h1>Edit Song</h1>
-      <form onSubmit={editSongHandler}>
-        <label>Title</label>
-        <input
-          id="title"
-          type="text"
-          placeholder="Title"
-          value={enteredTitle}
-          onChange={(event) => setTitle(event.target.value)}
-        />
+    <>
+    <div className="editSongContainer">
+    <div className="editSongHeader"> Changed your mind? </div> 
+    <form onSubmit={editSongHandler}>
+    <div className="editSongCard">
+    <h1 className="editSongSub"> Edit Song Details</h1>
+        <div className="formNewLine">
+          <label htmlFor="title">Title</label>
+          <input
+            id="title"
+            type="text"
+            placeholder="Title"
+            value={enteredTitle}
+            onChange={(event) => setTitle(event.target.value)}
+          />
+        </div>
 
-        <label>Artist</label>
-        <input
-          id="artist"
-          type="text"
-          placeholder="Artist"
-          value={enteredArtist}
-          onChange={(event) => setArtist(event.target.value)}
-        />
+        <div className="formNewLine">
+          <label htmlFor="artist">Artist</label>
+          <input
+            id="artist"
+            type="text"
+            placeholder="Artist"
+            value={enteredArtist}
+            onChange={(event) => setArtist(event.target.value)}
+          />
+        </div>
 
-        <label>Image</label>
-        <input
-          id="image"
-          type="text"
-          placeholder="Image Link"
-          value={enteredImage}
-          onChange={(event) => setImage(event.target.value)}
-        />
+        <div className="formNewLine">
+          <label htmlFor="image">Image</label>
+          <input
+            id="image"
+            type="text"
+            placeholder="Image Link"
+            value={enteredImage}
+            onChange={(event) => setImage(event.target.value)}
+          />
+        </div>
 
-        <label>Link</label>
-        <input
-          id="link"
-          type="text"
-          placeholder="Song Link"
-          value={enteredLink}
-          onChange={(event) => setLink(event.target.value)}
-        />
-
-        <button type="submit" className="editSongBtn">
-          Edit Song
+        <div className="formNewLine">
+          <label htmlFor="link">Link</label>
+          <input
+            id="link"
+            type="text"
+            placeholder="Song Link"
+            value={enteredLink}
+            onChange={(event) => setLink(event.target.value)}
+          />
+        </div> 
+    </div>
+    <button type="submit" className="editSongBtn">
+          Submit Changes
         </button>
       </form>
     </div>
+    </>
   );
 };
+
 
 export default Edit;

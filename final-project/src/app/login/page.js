@@ -113,7 +113,7 @@ const Login =  () => {
     <> 
         <header className={styles.header}>
       <a href="/" className={styles.homeLink} onClick={handleGoToHome}>
-  <img src="/Images/logo2.png" alt="Company logo" className={styles.logo} />
+  <img src="Images/logo2.png" alt="Company logo" className={styles.logo} />
   </a>
       </header>
 
