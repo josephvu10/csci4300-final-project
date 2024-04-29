@@ -3,18 +3,46 @@
     background-color: transparent;
     border: 1.5px solid whitesmoke;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 5px 10px;
     cursor: pointer;
     color: white;
-    font-size: 10px;
+    font-size: 12px;
     text-decoration: none; 
 }
 .editBtn{
-    margin-left: 5px;
+    margin-left: 10px;
 }
 .deleteBtn:hover {
     border: 1.5px solid #BC414A;
+    color: #BC414A;
 }
 .editBtn.editBtn:hover {
     border: 1.5px solid #7A9B7D;
+    color: #7A9B7D;
 }
+.divideLine {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+.songItem {
+    justify-content: center; 
+    align-items: center;
+}
+.song-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .leftSide {
+    margin-right: 20px; 
+  }
+  
+  .editDeleteContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .rightSide {
+    flex-grow: 1;
+    margin-top: 20px;
+  }

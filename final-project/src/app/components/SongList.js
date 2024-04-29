@@ -8,6 +8,7 @@ import './SongList.css';
 const SongList = ({songs, onEditSong, onDeleteSong}) => {
 
     return (
+        <div className="song-list-container">
         <Card className="songs">
             <ul>
                 {songs.map((song, idx) => {
@@ -36,6 +37,7 @@ const SongList = ({songs, onEditSong, onDeleteSong}) => {
             </ul>
             
         </Card>
+        </div>
     );
 };
 
