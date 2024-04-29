@@ -1,0 +1,20 @@
+.deleteBtn,
+.editBtn {
+    background-color: transparent;
+    border: 1.5px solid whitesmoke;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    font-size: 10px;
+    text-decoration: none; 
+}
+.editBtn{
+    margin-left: 5px;
+}
+.deleteBtn:hover {
+    border: 1.5px solid #BC414A;
+}
+.editBtn.editBtn:hover {
+    border: 1.5px solid #7A9B7D;
+}

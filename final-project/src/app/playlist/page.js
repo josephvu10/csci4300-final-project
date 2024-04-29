@@ -114,7 +114,7 @@ const Song = () => {
 
       <div className="hdr">
         <img
-          src="/Images/playlistBanner.gif"
+          src="/Images/songBanner.gif"
           alt="Square Image"
           className="squareImage"
         />
