@@ -105,7 +105,7 @@ const CreateAccount = () => {
         <button className={styles.loginButton} onClick={handleCreateAccount}>Create Account</button>
         <hr className={styles.divisionLine} />
         <p>Already have an account?
-        <Link href='/components/login'> 
+        <Link href='/login'> 
     <span className={styles.loginLink}> Log in here</span>
   </Link>
 </p>

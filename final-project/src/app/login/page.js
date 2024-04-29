@@ -167,7 +167,7 @@ const Login =  () => {
             <hr className={styles.divisionLine} />
             <p>
               Don't have an account?
-              <Link href='/components/createAccount'> 
+              <Link href='/createAccount'> 
                 <span className={styles.signUpLink}>
                   {" "}
                   Sign up for SoundPalette
