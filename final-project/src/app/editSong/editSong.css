@@ -56,6 +56,9 @@
   position: relative; 
   border-radius: 20px; 
   }
+  .editSongCard:hover {
+    box-shadow: 0 0 20px rgba(255, 165, 180, 0.3);
+  }
   .editSongCard::before {
     content: "";
     position: absolute;
