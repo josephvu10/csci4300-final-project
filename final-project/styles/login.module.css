@@ -1,0 +1,134 @@
+/* Login.css */
+
+/* Body */
+/*
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; // Light gray
+  margin: 0;
+  padding: 0;
+} */
+
+/* Container */
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222222;
+}
+
+.card {
+  background-color: #121212; 
+  padding: 50px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  margin-top: 80px;
+  margin-bottom: 130px;
+}
+/* Card text */
+.loginContainer h2 {
+  margin-top: 10px;
+  color: #FCFCFC;
+  font-size: 35px; 
+  margin-bottom: 35px;
+}
+.loginContainer p {
+  margin-bottom: 25px;
+  color: #FCFCFC;
+}
+.loginContainer .signUpLink {
+  text-decoration: underline; /* Underline the link */
+  color: #FCFCFC;
+}
+.loginContainer .signUpLink:hover {
+  color: #8F69B5; 
+  cursor: pointer;
+}
+
+/* Input fields */
+.loginContainer label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #FCFCFC; 
+}
+
+.loginContainer input[type="text"],
+.loginContainer input[type="password"] {
+  width: 250px;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #121212;
+  border: 1px solid #FCFCFC; 
+  border-radius: 4px;
+  color: #FCFCFC;
+}
+.loginContainer input[type="text"]:hover,
+.loginContainer input[type="password"]:hover {
+  border-color: #8F69B5; /* Change border color on hover */
+}
+
+/* Buttons */
+.loginContainer button {
+  width: 275px;
+  padding: 12px;
+  background-color: #7A51A4;
+  color: #FCFCFC; 
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.loginContainer button:hover {
+  background-color: #8F69B5;
+  transform: scale(1.1);
+}
+.loginButton {
+  margin-top: 15px; 
+  margin-bottom: 40px;
+}
+/* Logout button */
+.logout-btn {
+  padding: 10px;
+  background-color: #7A51A4;
+  color: #FCFCFC;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.logout-btn:hover {
+  background-color: #8F69B5;
+  transform: scale(1.1);
+}
+
+.inputContainer {
+  margin-bottom: 20px; 
+}
+
+
+.divisionLine {
+  width: 80%; 
+  margin-top: 10px; 
+  margin-bottom: 40px; 
+  border-color: #474747;
+}
+
+/* Visability toggle */
+.passwordInputWrapper {
+  position: relative;
+}
+.togglePassword {
+  position: absolute;
+  top: 35%;
+  right: 10px; /* Adjust as needed */
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #ccc;
+}
+.togglePassword:hover {
+  color: #8F69B5; 
+}

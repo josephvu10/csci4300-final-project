@@ -1,0 +1,16 @@
+.search-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 50px auto 40px;
+    max-width: 500px;
+  }
+  .search-container input[type="text"] {
+    width: 100%; 
+    padding: 8px; 
+    height: 15 px; 
+  }
+  .search-container button {
+    height: 100%; 
+    margin-left: 8px; 
+  }
