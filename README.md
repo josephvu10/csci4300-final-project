@@ -2,3 +2,7 @@
 
 Hello! This is our final project for CSCI 4300.
 We chose to create a Spotify web app with some improved functionality within managing playlists when a user logs in and manages their playlists.
+
+to run front end: npm run dev
+
+to run backend: npm run app
